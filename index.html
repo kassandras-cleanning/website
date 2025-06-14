@@ -26,14 +26,15 @@
       text-align: center;
     }
 
-    header h1 {
-      margin: 0;
-      font-size: 2rem;
+    nav {
+      margin-top: 1rem;
     }
 
-    header p {
-      margin-top: 0.5rem;
-      font-size: 1rem;
+    nav a {
+      color: white;
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: bold;
     }
 
     .container {
@@ -43,11 +44,12 @@
     }
 
     .section {
-      margin-bottom: 2rem;
+      margin-bottom: 3rem;
     }
 
     h2 {
       color: var(--primary-color);
+      margin-bottom: 0.5rem;
     }
 
     .services {
@@ -62,6 +64,22 @@
       padding: 1rem;
       border-radius: 8px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    .placeholder-img {
+      width: 100%;
+      height: 180px;
+      background: #ffffff;
+      border: 2px dashed #ccc;
+      margin-bottom: 1rem;
+    }
+
+    .testimonial, .faq {
+      background: white;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      margin-bottom: 1rem;
     }
 
     .cta {
@@ -99,6 +117,16 @@
       .cta button {
         width: 100%;
       }
+
+      nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      nav a {
+        margin: 0.5rem;
+      }
     }
   </style>
 </head>
@@ -107,25 +135,23 @@
   <header>
     <h1>Kassandra Cleaning Service</h1>
     <p>Professional Office Cleaning in Houston, TX</p>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="#contact">Contact</a>
+    </nav>
   </header>
 
   <div class="container">
 
-    <section class="section">
-      <h2>Why Choose Us?</h2>
-      <p>
-        We specialize in high-quality, dependable office cleaning services for businesses across the Houston area. With flexible scheduling, eco-friendly products, and a satisfaction guarantee, we keep your workplace spotless — so you can focus on what matters most.
-      </p>
+    <section class="section" id="about">
+      <h2>About Us</h2>
+      <div class="placeholder-img"></div>
+      <p>Founded with the mission to bring personalized and professional cleaning to Houston's small offices, we pride ourselves on consistency, integrity, and care. Our team is locally based and trained to handle each space with attention to detail and eco-conscious practices.</p>
     </section>
 
-    <section class="section">
-      <h2>Our Promise</h2>
-      <p>
-        At Kassandra Cleaning Service, your satisfaction is our top priority. We take pride in delivering consistent, top-tier cleaning with a personal touch. Whether you’re a small office or a growing business, we treat every space like our own — clean, cared for, and ready to impress.
-      </p>
-    </section>
-
-    <section class="section">
+    <section class="section" id="services">
       <h2>Our Services</h2>
       <div class="services">
         <div class="service">
@@ -145,6 +171,69 @@
           <p>Discreet and efficient cleaning after business hours, including weekends.</p>
         </div>
       </div>
+    </section>
+
+    <section class="section" id="testimonials">
+      <h2>Testimonials</h2>
+      <div class="testimonial">
+        <div class="placeholder-img" style="height: 100px; width: 100px;"></div>
+        <p>"Kassandra Cleaning Service transformed our office! Always reliable and friendly." — Office Manager, Houston Tech Co.</p>
+      </div>
+      <div class="testimonial">
+        <div class="placeholder-img" style="height: 100px; width: 100px;"></div>
+        <p>"We trust them after-hours with our facility. Never a missed spot." — Legal Office Admin</p>
+      </div>
+    </section>
+
+    <section class="section" id="industries">
+      <h2>Industries Served</h2>
+      <ul>
+        <li>Law Offices</li>
+        <li>Real Estate Agencies</li>
+        <li>Medical Clinics</li>
+        <li>Startups & Coworking Spaces</li>
+        <li>Accounting Firms</li>
+      </ul>
+    </section>
+
+    <section class="section" id="checklist">
+      <h2>Cleaning Checklist</h2>
+      <div class="placeholder-img"></div>
+      <p><a href="#">Download our full office cleaning checklist (PDF)</a></p>
+    </section>
+
+    <section class="section" id="gallery">
+      <h2>Before & After Gallery</h2>
+      <div class="placeholder-img"></div>
+      <div class="placeholder-img"></div>
+      <div class="placeholder-img"></div>
+    </section>
+
+    <section class="section" id="blog">
+      <h2>From the Blog</h2>
+      <ul>
+        <li><a href="#">How Often Should You Disinfect Your Office Restroom?</a></li>
+        <li><a href="#">Eco-Friendly Office Cleaning: What to Look For</a></li>
+      </ul>
+    </section>
+
+    <section class="section" id="faq">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq">
+        <strong>Do you bring your own supplies?</strong>
+        <p>Yes, we bring all necessary eco-friendly and commercial-grade supplies.</p>
+      </div>
+      <div class="faq">
+        <strong>Are your products pet-safe?</strong>
+        <p>Absolutely. We use non-toxic and pet-safe solutions for all areas.</p>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <h2>Contact Us</h2>
+      <p>Email: <a href="mailto:kassandra@cleaningservice.com">kassandra@cleaningservice.com</a></p>
+      <p>Phone: (832) 623-0527</p>
+      <div class="placeholder-img" style="height: 300px;"></div>
     </section>
 
     <section class="cta">
