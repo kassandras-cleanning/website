@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Instant Quote – Kassandra Cleaning Service (Office)</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <meta name="description" content="Instant office-cleaning quote for Houston SMBs. Enter square feet, bathrooms, and visits per week to get a downloadable PDF with taxes and cost breakdown."/>
+  <style>
+    /* —— Base (match your minimal aesthetic) —— */
+    :root {
+      --primary: #00695c; /* site primary */
+      --accent: #f9a825; /* warm accent */
+      --ink: #1a1a1a;
+      --muted: #666;
+      --bg: #fafafa;
+      --card: #fff;
+      --radius: 12px;
+      --shadow: 0 8px 24px rgba(0,0,0,.06);
+    }
+    * { box-sizing: border-box; }
+    body { font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, sans-serif; margin:0; background:var(--bg); color:var(--ink); line-height:1.65; }
+    .container { max-width: 980px; margin: 0 auto; padding: 28px 16px 60px; }
+
+    /* —— Header —— */
+    header { background: var(--primary); color: #fff; border-bottom: 1px solid rgba(255,255,255,.18); }
+    .header-inner { max-width: 980px; margin: 0 auto; padding: 22px 16px; display:flex; align-items:center; gap:14px; }
+    .logo { height: 42px; width:auto; display:block; }
+    .title-wrap h1 { font-size: 1.4rem; margin:0 0 3px; font-weight:700; }
+    .title-wrap p { margin:0; opacity:.9; }
+
+    /* —— Card —— */
+    .card { background: var(--card); border: 1px solid #eee; border-radius: var(--radius); box-shadow: var(--shadow); padding: 18px; margin-top: 18px; }
+    h2 { font-size: 1.25rem; margin: 0 0 10px; color:#222; }
+    p { margin:0 0 12px; }
+
+    /* —— Form —— */
+    .row { display:grid; grid-template-columns:1fr; gap:12px; }
+    @media (min-width: 760px) { .row.two{ grid-template-columns: 1fr 1fr; } .row.three{ grid-template-columns: 1fr 1fr 1fr; } }
+    label { font-weight: 700; font-size: 14px; display:block; }
+    input[type="text"], input[type="number"], input[type="email"], input[type="tel"], input[type="url"], select { width:100%; margin-top:6px; padding:12px; border:1px solid #ccc; border-radius:8px; background:#fff; font-size:15px; }
+    .help { font-size:12px; color:#666; margin-top:6px; }
+
+    .pill { display:inline-block; background:#eef6ff; color:#1d3a5f; border:1px solid #d7e9ff; border-radius: 999px; padding:6px 12px; font-weight:700; font-size:13px; margin-right:8px; }
+
+    /* —— Preview grid —— */
+    .kpis { display:grid; grid-template-columns:1fr; gap:10px; }
+    @media (min-width:720px){ .kpis{ grid-template-columns: repeat(3, 1fr);} }
+    .kpi { background:#f7f7f7; border:1px solid #eee; border-radius:10px; padding:12px; text-align:center; }
+    .kpi b { font-size:1.1rem; display:block; }
+    .muted { color:#666; }
+
+    /* —— Buttons —— */
+    .actions { margin-top: 14px; display:flex; gap:10px; flex-wrap:wrap; }
+    .btn { appearance:none; border:1px solid #1a1a1a; background:#1a1a1a; color:#fff; padding:12px 16px; border-radius:8px; font-weight:600; cursor:pointer; }
+    .btn:hover{ background:#333; }
+    .btn.secondary{ background:#fff; color:#1a1a1a; }
+
+    /* —— Footer note —— */
+    .note { background: #f1fbf5; border-left:3px solid #0a7f2e; border-radius:8px; padding:12px 14px; font-size:14px; margin-top:12px; }
+    .foot { text-align:center; color:#777; font-size:13px; margin-top:26px; }
+
+    /* —— PDF brand header —— */
+    .brandline { background:#fff9e8; border:1px solid #ffe2a8; padding:10px 12px; border-radius:10px; margin-bottom: 10px; }
+    .badge { display:inline-block; background: var(--accent); color:#111; font-weight:700; padding:2px 10px; border-radius:999px; }
+
+    @media (max-width:600px){
+      header .title-wrap h1{ font-size:1.1rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <img src="/img/collage.png" alt="Kassandra Cleaning Service" class="logo" />
+      <div class="title-wrap">
+        <h1>Kassandra Cleaning Service — Instant Office Quote</h1>
+        <p>Simple. Transparent. A downloadable PDF with Texas taxes included.</p>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <section class="card brandline" aria-live="polite">
+      <span class="badge">Houston • Texas</span>
+      <p style="margin:6px 0 0;">Enter your details. We’ll estimate time, labor, materials and margin — then apply the current Houston sales tax (default 8.25%).</p>
+    </section>
+
+    <section class="card" id="quote-form">
+      <h2>Get Your Quote</h2>
+      <div class="row two">
+        <div>
+          <label for="business">Business / Practice Name</label>
+          <input id="business" type="text" placeholder="e.g., Cypress Creek ER" required />
+        </div>
+        <div>
+          <label for="contact">Contact Email (optional)</label>
+          <input id="contact" type="email" placeholder="you@company.com" />
+        </div>
+      </div>
+
+      <div class="row three" style="margin-top:8px;">
+        <div>
+          <label for="sqft">Office Area (sq ft)</label>
+          <input id="sqft" type="number" inputmode="decimal" placeholder="e.g., 2000" min="200" step="10" required />
+          <div class="help">Includes all cleanable areas. Minimum 200 sq ft.</div>
+        </div>
+        <div>
+          <label for="baths">Bathrooms</label>
+          <input id="baths" type="number" placeholder="e.g., 2" min="1" step="1" required />
+        </div>
+        <div>
+          <label for="days">Days / Week</label>
+          <select id="days" required>
+            <option value="">Select…</option>
+            <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="row two" style="margin-top:8px;">
+        <div>
+          <label for="tax">Texas Sales Tax (%)</label>
+          <input id="tax" type="number" step="0.01" value="8.25" />
+          <div class="help">Default for Houston. Adjust if your location is different.</div>
+        </div>
+        <div>
+          <label for="freq">Frequency Discount</label>
+          <input id="freq" type="text" value="Auto" disabled />
+          <div class="help">Applies automatically based on days/week.</div>
+        </div>
+      </div>
+
+      <div style=\"margin:10px 0 6px;\">
+        <span class=\"pill\">Base wage: $15/hr</span>
+        <span class=\"pill\">Payroll burden est.: +20%</span>
+        <span class=\"pill\">Materials: $0.006/sq ft/visit</span>
+        <span class=\"pill\">Target margin: 35%</span>
+      </div>
+
+      <div class="actions">
+        <button class="btn" id="calcBtn">Calculate Quote</button>
+        <button class="btn secondary" id="pdfBtn" disabled>Download PDF</button>
+      </div>
+
+      <div class="note" id="noteAfterCalc" style="display:none;">
+        Estimates assume standard office cleaning (no specialty restoration). Final onsite assessment may adjust time/cost.
+      </div>
+    </section>
+
+    <section class="card" id="preview" style="display:none;">
+      <h2>Quote Preview</h2>
+      <p class="muted" id="who"></p>
+
+      <div class="kpis" style="margin:10px 0 14px;">
+        <div class=\"kpi\"><span class=\"muted\">Time / visit</span><b id=\"kpitime\">—</b></div>
+        <div class="kpi"><span class="muted">Before tax (monthly)</span><b id="kpisub">—</b></div>
+        <div class="kpi"><span class="muted">Total (with tax)</span><b id="kpitotal">—</b></div>
+      </div>
+
+      <div id="breakdown"></div>
+    </section>
+
+    <p class="foot">© 2025 Kassandra Cleaning Service · Houston, TX · All rights reserved.</p>
+  </main>
+
+  <!-- jsPDF (UMD) -->
+  <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
+  <script>
+    // —— Pricing model (transparent & tweakable) ——
+    const MODEL = {
+      wageBase: 15,           // $/hr
+      payrollBurden: 0.20,    // 20%
+      materialsPerSqFt: 0.006,// $ per sq ft per visit
+      marginTarget: 0.35,     // 35%
+      timePerSqFtMin: 0.06,   // minutes per sq ft (standard)
+      minutesPerBathroom: 15, // add per bathroom
+      setupMinutes: 15,       // per visit
+      weeksPerMonth: 4.33,
+      freqDiscount(days){     // frequency-based discount
+        if(days >= 6) return 0.15;
+        if(days >= 4) return 0.10;
+        if(days >= 2) return 0.05;
+        return 0.00;
+      }
+    };
+
+    const $ = (id) => document.getElementById(id);
+    const money = (n) => n.toLocaleString(undefined, { style:'currency', currency:'USD' });
+    const pct = (n) => (n*100).toFixed(2) + '%';
+
+    function computeQuote({ sqft, baths, days, taxRate }) {
+      const minutesArea = sqft * MODEL.timePerSqFtMin;
+      const minutesBath = baths * MODEL.minutesPerBathroom;
+      const minutesTotal = minutesArea + minutesBath + MODEL.setupMinutes;
+      const hours = minutesTotal / 60;
+
+      // Effective labor rate with burden (no block rounding)
+      const laborRate = MODEL.wageBase * (1 + MODEL.payrollBurden);
+      const laborCostPerVisit = hours * laborRate;
+      const materialsPerVisit = sqft * MODEL.materialsPerSqFt;
+
+      // Subtotal cost per visit before margin (no overhead/transportation)
+      const costPerVisit = laborCostPerVisit + materialsPerVisit;
+      const pricePerVisit = costPerVisit / (1 - MODEL.marginTarget);
+
+      const discount = MODEL.freqDiscount(days);
+      const pricePerVisitAfterDisc = pricePerVisit * (1 - discount);
+
+      const visitsPerMonth = days * MODEL.weeksPerMonth;
+      const monthlyBeforeTax = pricePerVisitAfterDisc * visitsPerMonth;
+      const salesTax = monthlyBeforeTax * (taxRate/100);
+      const monthlyTotal = monthlyBeforeTax + salesTax;
+
+      return {
+        minutesTotal, hours, laborRate, laborCostPerVisit, materialsPerVisit,
+        costPerVisit, pricePerVisit, discount, pricePerVisitAfterDisc,
+        visitsPerMonth, monthlyBeforeTax, salesTax, monthlyTotal
+      };
+    }
+
+    function renderBreakdown(biz, sqft, baths, days, taxRate, r){
+      const lines = [];
+      lines.push(`<div class="pill">${sqft.toLocaleString()} sq ft</div>`);
+      lines.push(`<div class="pill">${baths} bathroom(s)</div>`);
+      lines.push(`<div class="pill">${days} day(s)/week</div>`);
+      lines.push(`<div class="pill">Tax: ${taxRate}%</div>`);
+
+      const html = `
+        <div style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:10px;">${lines.join('')}</div>
+        <div style="overflow-x:auto;">
+          <table style="width:100%; border-collapse:collapse;">
+            <thead>
+              <tr style="background:#f7f7f7;">
+                <th style="text-align:left; padding:10px; border-bottom:1px solid #eee;">Item</th>
+                <th style="text-align:right; padding:10px; border-bottom:1px solid #eee;">Per Visit</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td style=\"padding:8px 10px;\">Estimated time</td><td style=\"padding:8px 10px; text-align:right;\">${r.hours.toFixed(2)} hrs</td></tr>
+                            <tr><td style=\"padding:8px 10px;\">Labor @ ${money(r.laborRate)}/hr</td><td style="padding:8px 10px; text-align:right;">${money(r.laborCostPerVisit)}</td></tr>
+              <tr><td style="padding:8px 10px;">Materials (${money(MODEL.materialsPerSqFt)}/sq ft)</td><td style="padding:8px 10px; text-align:right;">${money(r.materialsPerVisit)}</td></tr>
+                                          <tr><td style="padding:8px 10px; font-weight:700;">Cost (before margin)</td><td style="padding:8px 10px; text-align:right; font-weight:700;">${money(r.costPerVisit)}</td></tr>
+              <tr><td style="padding:8px 10px;">Target margin</td><td style="padding:8px 10px; text-align:right;">${pct(MODEL.marginTarget)}</td></tr>
+              <tr><td style="padding:8px 10px; font-weight:700;">Price / visit</td><td style="padding:8px 10px; text-align:right; font-weight:700;">${money(r.pricePerVisit)}</td></tr>
+              <tr><td style="padding:8px 10px;">Frequency discount</td><td style="padding:8px 10px; text-align:right;">-${pct(r.discount)}</td></tr>
+              <tr><td style="padding:8px 10px; font-weight:700;">Your price / visit</td><td style="padding:8px 10px; text-align:right; font-weight:700;">${money(r.pricePerVisitAfterDisc)}</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div style="margin-top:12px; display:grid; grid-template-columns:1fr; gap:8px;">
+          <div style="display:flex; justify-content:space-between; border-top:1px dashed #ddd; padding-top:10px;"><span>Visits / month</span><b>${r.visitsPerMonth.toFixed(2)}</b></div>
+          <div style="display:flex; justify-content:space-between;"><span>Monthly (before tax)</span><b>${money(r.monthlyBeforeTax)}</b></div>
+          <div style="display:flex; justify-content:space-between;"><span>Sales tax (${taxRate}%)</span><b>${money(r.salesTax)}</b></div>
+          <div style="display:flex; justify-content:space-between; font-size:1.15rem; border-top:1px solid #eee; padding-top:10px;"><span>Total / month</span><b>${money(r.monthlyTotal)}</b></div>
+        </div>
+      `;
+      return html;
+    }
+
+    function generatePDF(data, result){
+      const { jsPDF } = window.jspdf;
+      const doc = new jsPDF({ unit: 'pt', format: 'letter' });
+      const L = (s) => doc.text(String(s), 56, y, { baseline:'top' });
+      const R = (s) => doc.text(String(s), 556, y, { align:'right', baseline:'top' });
+      let y = 56;
+
+      // Brand bar
+      doc.setFillColor(255, 249, 232);
+      doc.setDrawColor(255, 226, 168);
+      doc.roundedRect(40, 40, 536, 70, 8, 8, 'FD');
+      doc.setTextColor(17,17,17);
+      doc.setFont('helvetica', 'bold'); doc.setFontSize(14);
+      doc.text('Kassandra Cleaning Service — Office Quote', 56, 56);
+      doc.setFont('helvetica', 'normal'); doc.setFontSize(11);
+      doc.text('Houston, Texas 770—  ·  kassandras@kassandra-tx.com  ·  (832) 623-0527', 56, 76);
+
+      // Client & inputs
+      y = 128; doc.setTextColor(0,0,0); doc.setFont('helvetica','bold'); doc.setFontSize(13);
+      L('Prepared for:'); doc.setFont('helvetica','normal'); doc.setFontSize(12);
+      y+=18; L(`${data.business || 'Client'} — ${data.sqft.toLocaleString()} sq ft, ${data.baths} bath(s), ${data.days}/week`);
+      y+=10; L(`Tax: ${data.taxRate}% · Frequency discount: ${pct(result.discount)}`);
+
+      // KPIs line
+      y+=22; doc.setFont('helvetica','bold'); L('Summary (Monthly)');
+      y+=18; doc.setFont('helvetica','normal');
+      L(`Before tax: ${money(result.monthlyBeforeTax)}`); R(`With tax: ${money(result.monthlyTotal)}`);
+      y+=10; R(`Estimated: ${result.hours.toFixed(2)} hrs`);
+
+      // Table header
+      y+=26; doc.setFont('helvetica','bold'); L('Breakdown per Visit');
+      y+=16; doc.setDrawColor(230); doc.line(56, y, 556, y); y+=8; doc.setFont('helvetica','normal');
+
+      const rows = [
+        ['Estimated time', `${result.hours.toFixed(2)} hrs`],
+        [`Labor @ ${money(result.laborRate)}/hr`, money(result.laborCostPerVisit)],
+        [`Materials (${money(MODEL.materialsPerSqFt)}/sq ft)`, money(result.materialsPerVisit)],
+        ['Cost (before margin)', money(result.costPerVisit)],
+        ['Target margin', pct(MODEL.marginTarget)],
+        ['Price / visit', money(result.pricePerVisit)],
+        ['Frequency discount', '-' + pct(result.discount)],
+        ['Your price / visit', money(result.pricePerVisitAfterDisc)],
+      ];
+
+      rows.forEach(([left, right])=>{ y+=18; L(left); R(right); });
+
+      // Footer totals
+      y+=26; doc.setDrawColor(230); doc.line(56, y, 556, y);
+      y+=12; L(`Visits / month: ${result.visitsPerMonth.toFixed(2)}`); R(`Sales tax (${data.taxRate}%): ${money(result.salesTax)}`);
+      y+=18; doc.setFont('helvetica','bold'); L('Total / month'); R(money(result.monthlyTotal));
+
+      // Terms
+      y+=28; doc.setFont('helvetica','normal'); doc.setFontSize(10);
+      const terms = 'Notes: Quote assumes standard office cleaning and typical soil levels. Materials are included per visit. Specialty services (carpet extraction, deep scrub/strip/wax, post-construction) are priced separately. Final pricing subject to walkthrough. Net 15. Liability insured. Sales tax collected per Texas jurisdiction.';
+      doc.text(doc.splitTextToSize(terms, 500), 56, y);
+
+      doc.save(`Kassandra_Quote_${(data.business||'Client').replace(/[^a-z0-9]+/gi,'_')}.pdf`);
+    }
+
+    $('calcBtn').addEventListener('click', () => {
+      const business = $('business').value.trim();
+      const sqft = parseFloat($('sqft').value);
+      const baths = parseInt($('baths').value || '0', 10);
+      const days = parseInt($('days').value || '0', 10);
+      const taxRate = parseFloat($('tax').value || '8.25');
+
+      if(!sqft || !baths || !days){ alert('Please fill square feet, bathrooms, and days/week.'); return; }
+
+      const result = computeQuote({ sqft, baths, days, taxRate });
+
+      // Update UI
+      $('freq').value = (result.discount>0) ? `${(result.discount*100).toFixed(0)}% auto` : '—';
+      $('who').textContent = `${business || 'Client'} · ${sqft.toLocaleString()} sq ft · ${baths} bath(s) · ${days}/week · Tax ${taxRate}%`;
+      //$('kpitime').textContent = `${result.hours.toFixed(2)} hrs`;
+      $('kpisub').textContent = money(result.monthlyBeforeTax);
+      $('kpitotal').textContent = money(result.monthlyTotal);
+      $('breakdown').innerHTML = renderBreakdown(business, sqft, baths, days, taxRate, result);
+
+      $('preview').style.display = 'block';
+      $('noteAfterCalc').style.display = 'block';
+      $('pdfBtn').disabled = false;
+
+      // cache for PDF
+      window.__quoteData = { business, sqft, baths, days, taxRate };
+      window.__quoteResult = result;
+    });
+
+    $('pdfBtn').addEventListener('click', () => {
+      if(!window.__quoteData || !window.__quoteResult) { alert('Please calculate the quote first.'); return; }
+      generatePDF(window.__quoteData, window.__quoteResult);
+    });
+  </script>
+</body>
+</html>
