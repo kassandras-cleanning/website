@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kassandra Cleaning Service – Office Cleaning in Houston</title>
-  <meta name="description" content="Kassandra Cleaning Service LLC provides professional office cleaning in Houston, TX. Trusted by medical clinics, law offices, and small businesses. Eco-friendly, reliable, and affordable cleaning solutions. Get your free quote today.">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kassandras Cleaning Service – Office Cleaning in Houston</title>
+    <meta name="description" content="Kassandra Cleaning Service LLC provides professional office cleaning in Houston, TX. Trusted by medical clinics, law offices, and small businesses. Eco-friendly, reliable, and affordable cleaning solutions. Get your free quote today.">
 
   <link rel="canonical" href="https://www.kassandra-tx.com/">
 
@@ -20,249 +20,12 @@
   <meta name="twitter:title" content="Kassandra Cleaning Service – Office Cleaning in Houston">
   <meta name="twitter:description" content="Reliable office cleaning services in Houston, TX. Eco-friendly, affordable, and trusted by professionals.">
   <meta name="twitter:image" content="https://www.kassandra-tx.com/img/collage.png">
-  <style>
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
 
-:root {
-  --primary-color: #00695c;
-  --accent-color: #f9a825;
-  --text-color: #333;
-  --bg-color: #fafafa;
-  --card-bg: #ffffff;
-  --shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
-  --radius: 12px;
-}
+    <link rel="preconnect" href="https://fonts.bunny.net">
+    <link href="https://fonts.bunny.net/css?family=figtree:300,400,600,700,900&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
 
-body {
-  margin: 0;
-  font-family: 'Inter', sans-serif;
-  background: var(--bg-color);
-  color: var(--text-color);
-  line-height: 1.6;
-  font-size: 1rem;
-}
-
-header {
-  background-color: var(--primary-color);
-  color: white;
-  padding: 2rem 1rem;
-  text-align: center;
-  box-shadow: var(--shadow);
-}
-
-nav {
-  margin-top: 1rem;
-}
-
-nav a {
-  color: white;
-  margin: 0 1rem;
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.2s ease;
-}
-
-nav a:hover {
-  color: var(--accent-color);
-}
-
-.container {
-  padding: 2.5rem 1rem;
-  max-width: 1100px;
-  margin: auto;
-}
-
-.section {
-  margin-bottom: 3.5rem;
-}
-
-h2 {
-  color: var(--primary-color);
-  margin-bottom: 1rem;
-  font-size: 2rem;
-}
-
-.services {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-}
-
-.service {
-  flex: 1 1 280px;
-  background: var(--card-bg);
-  padding: 1.5rem;
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  transition: transform 0.2s ease;
-}
-
-.service:hover {
-  transform: translateY(-4px);
-}
-
-.placeholder-img {
-  width: 100%;
-  height: 180px;
-  background: #f3f3f3;
-  border: 2px dashed #ddd;
-  border-radius: var(--radius);
-  margin-bottom: 1rem;
-}
-
-.testimonial, .faq {
-  background: var(--card-bg);
-  padding: 2rem;
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  margin-bottom: 1.5rem;
-}
-
-.cta {
-  text-align: center;
-  margin-top: 3rem;
-}
-
-.cta button {
-  background: var(--accent-color);
-  color: black;
-  border: none;
-  padding: 1rem 2rem;
-  font-size: 1.1rem;
-  font-weight: 500;
-  border-radius: var(--radius);
-  cursor: pointer;
-  transition: background 0.3s ease, transform 0.2s ease;
-}
-
-.cta button:hover {
-  background: #f57f17;
-  transform: scale(1.03);
-}
-
-footer {
-  background: #eeeeee;
-  padding: 1.5rem;
-  text-align: center;
-  font-size: 0.9rem;
-  color: #666;
-  border-top: 1px solid #ddd;
-}
-
-.carousel {
-  position: relative;
-  max-width: 900px;
-  margin: 2rem auto;
-  overflow: hidden;
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  background: var(--card-bg);
-}
-
-.carousel-track {
-  display: flex;
-  transition: transform 0.5s ease-in-out;
-}
-
-.carousel-image {
-  min-width: 100%;
-  height: 630px;
-  object-fit: cover;
-}
-
-.carousel-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(0, 0, 0, 0.4);
-  border: none;
-  color: white;
-  font-size: 2rem;
-  padding: 0.5rem 1rem;
-  cursor: pointer;
-  z-index: 2;
-  border-radius: var(--radius);
-}
-
-.carousel-btn:hover {
-  background: rgba(0, 0, 0, 0.6);
-}
-
-.carousel-btn.prev {
-  left: 12px;
-}
-.carousel-btn.next {
-  right: 12px;
-}
-
-ul {
-  padding-left: 1.5rem;
-}
-
-a {
-  color: var(--primary-color);
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-@media (max-width: 600px) {
-  header h1 {
-    font-size: 1.5rem;
-  }
-
-  nav {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  nav a {
-    margin: 0.5rem;
-  }
-
-  .cta button {
-    width: 100%;
-  }
-
-  .carousel-image {
-    height: 280px;
-  }
-}
-
-@media (max-width: 600px) {
-  img,
-  .responsive-box,
-  .carousel-image,
-  .placeholder-img {
-    height: auto !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    object-fit: contain !important;
-  }
-}
-
-html, body {
-  width: 100%;
-  max-width: 100%;
-  overflow-x: hidden;
-}
-
-
-
-
-
-
-
-
-
-
-
-  </style>
-
-  <!-- Google Tag Manager -->
+    <!-- Google Tag Manager -->
   <script>
     (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -281,7 +44,28 @@ html, body {
   gtag('config', 'G-4BYY4CFTVV');
 </script>
 
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Figtree', 'sans-serif'] },
+                    colors: {
+                        brand: '#0D9488', // Teal 600
+                        fresh: '#F0FDFA', // Teal 50
+                        surface: '#FFFFFF',
+                        slate: '#475569'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(12px); }
+        .hero-bg { background: radial-gradient(circle at top right, #ccfbf1, #ffffff); }
+        .card-shadow { box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.05); }
+    </style>
 </head>
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -321,299 +105,324 @@ html, body {
   ]
 }
 </script>
-<body>
 
-    <!-- Google Tag Manager (noscript) -->
-    <noscript>
-      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TJXBQL5P"
-      height="0" width="0" style="display:none;visibility:hidden"></iframe>
-    </noscript>
-    <!-- End Google Tag Manager (noscript) -->
+<body class="font-sans antialiased text-slate-600 bg-white selection:bg-brand selection:text-white">
 
-  <header>
-    <h1>Kassandra's Cleaning Service LLC</h1>
-    <p>Professional Office Cleaning in Houston, TX</p>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#services">Services</a>
-      <a href="#testimonials">Testimonials</a>
-      <a href="#contact">Contact</a>
+    <nav class="fixed top-0 w-full z-50 border-b border-slate-100 glass">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <div class="w-8 h-8 bg-brand rounded-lg flex items-center justify-center text-white font-bold shadow-lg shadow-brand/20">K</div>
+                <span class="text-xl font-black tracking-tighter text-slate-900 uppercase">Kassandras<span class="text-brand">Cleaning</span></span>
+            </div>
+            <div class="hidden lg:flex items-center gap-8 text-[10px] font-bold tracking-widest uppercase">
+                <a href="#about" class="text-slate-500 hover:text-brand transition">About</a>
+                <a href="#services" class="text-slate-500 hover:text-brand transition">Services</a>
+                <a href="#testimonials" class="text-slate-500 hover:text-brand transition">Testimonials</a>
+                <a href="mailto:kassandras@kassandra-tx.com" class="bg-brand text-white px-6 py-2.5 rounded-full hover:bg-teal-700 transition-all shadow-md shadow-brand/10">
+                    Get a Quote
+                </a>
+            </div>
+        </div>
     </nav>
-  </header>
 
-  <div class="container">
+    <header class="relative pt-48 pb-24 hero-bg">
+        <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
+            <div>
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand/10 border border-brand/20 text-brand text-[10px] font-bold uppercase tracking-widest mb-6">
+                    Professional Grade • Houston, TX
+                </div>
+                <h1 class="text-5xl lg:text-7xl font-black text-slate-900 leading-[1.1] tracking-tighter mb-8">
+                    The Gold Standard for <span class="text-brand underline decoration-brand/20 underline-offset-8">Medical & Law</span> Offices.
+                </h1>
+                <p class="text-xl text-slate-500 max-w-xl leading-relaxed mb-10">
+                    Precision cleaning that ensures your clinic or firm looks as professional as the services you provide. Eco-friendly, reliable, and locally owned.
+                </p>
+                <!-- <div class="flex flex-wrap gap-4">
+                    <button onclick="window.location.href='mailto:kassandras@kassandra-tx.com'" class="bg-slate-900 text-white px-10 py-5 rounded-2xl font-black text-lg hover:bg-brand transition-all shadow-xl shadow-slate-200">
+                        Schedule a Free Quote
+                    </button>
+                </div> -->
+                <!-- <div class="flex flex-wrap gap-4">
+                  <button onclick="window.location.href='mailto:kassandras@kassandra-tx.com'" class="relative px-10 py-5 rounded-2xl font-black text-lg 
+                               bg-gradient-to-r from-slate-900 to-slate-700 text-white
+                               hover:scale-105 hover:shadow-2xl 
+                               transition-all duration-200 shadow-xl">
+                    Schedule a Free Quote
+                  </button>
+                </div> -->
+                <div class="relative z-20 flex flex-wrap gap-4 mt-10">
+                  <button onclick="window.location.href='mailto:kassandras@kassandra-tx.com'"
+                    class="w-full sm:w-auto bg-transparent border-2 border-slate-900 text-slate-900 px-10 py-5 rounded-2xl font-black text-lg hover:bg-slate-900 hover:text-[#0D9488] transition-all duration-300 shadow-xl shadow-slate-100 transform active:scale-95 text-center">
+                    Schedule a Free Quote
+                  </button>
+                </div>
 
-    <section class="section" id="about">
-      <h2>About Us</h2>
-      <img
-        src="/img/collage.png"
-        alt="Our Team and Work"
-        style="
-          height: 180px;
-          width: auto;
-          max-width: 1000px;
-          background: #fff;
-          border-radius: 12px;
-          box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
-          border: 1px solid #f0f0f0;
-          display: block;
-          margin: 24px auto;
-        "
-      />
-      <p style="
-        text-align: center;
-        max-width: 800px;
-        margin: 24px auto 0;
-        line-height: 1.6;
-        font-size: 16px;
-        color: #333;
-      ">
-        Founded with the mission to bring personalized and professional cleaning to Houston's small offices, we pride ourselves on consistency, integrity, and care. Our team is locally based and trained to handle each space with attention to detail and eco-conscious practices.
-      </p>
+            </div>
+
+            <div class="relative">
+                <div class="bg-white border border-slate-100 p-10 rounded-[2.5rem] card-shadow">
+                    <h3 class="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400 mb-8 border-b border-slate-50 pb-4">Our Integrity Metric</h3>
+                    <div class="space-y-8">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-fresh flex-shrink-0 flex items-center justify-center text-brand">✔</div>
+                            <div>
+                                <h4 class="font-bold text-slate-900">Hospital-Grade Disinfection</h4>
+                                <p class="text-sm text-slate-500">Meeting the strict standards of Cypress Creek ER.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-fresh flex-shrink-0 flex items-center justify-center text-brand">✔</div>
+                            <div>
+                                <h4 class="font-bold text-slate-900">Discreet Logistics</h4>
+                                <p class="text-sm text-slate-500">After-hours servicing designed for privacy.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-fresh flex-shrink-0 flex items-center justify-center text-brand">✔</div>
+                            <div>
+                                <h4 class="font-bold text-slate-900">100% Non-Toxic</h4>
+                                <p class="text-sm text-slate-500">Safe for staff, patients, and sensitive environments.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="services" class="py-32 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+                <div>
+                    <h2 class="text-4xl font-black text-slate-900 mb-4">Service Capabilities</h2>
+                    <p class="text-slate-500 max-w-md">Every space requires a unique approach to sanitation and presentation.</p>
+                </div>
+                <a href="#contact" class="text-brand font-bold text-sm border-b-2 border-brand/20 pb-1">Custom Service Plans →</a>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="p-8 rounded-3xl bg-fresh border border-teal-100/50 hover:shadow-xl hover:shadow-brand/5 transition-all group">
+                    <div class="w-12 h-12 bg-white rounded-2xl flex items-center justify-center mb-6 shadow-sm">🏢</div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-3">General Office</h3>
+                    <p class="text-sm text-slate-500 leading-relaxed">Full dusting, vacuuming, and workspace sanitization.</p>
+                </div>
+                <div class="p-8 rounded-3xl bg-fresh border border-teal-100/50 hover:shadow-xl hover:shadow-brand/5 transition-all group">
+                    <div class="w-12 h-12 bg-white rounded-2xl flex items-center justify-center mb-6 shadow-sm">🧼</div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-3">Restrooms</h3>
+                    <p class="text-sm text-slate-500 leading-relaxed">Deep disinfecting and automated restocking.</p>
+                </div>
+                <div class="p-8 rounded-3xl bg-fresh border border-teal-100/50 hover:shadow-xl hover:shadow-brand/5 transition-all group">
+                    <div class="w-12 h-12 bg-white rounded-2xl flex items-center justify-center mb-6 shadow-sm">✨</div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-3">Floor Care</h3>
+                    <p class="text-sm text-slate-500 leading-relaxed">Carpet extraction and high-gloss floor polishing.</p>
+                </div>
+                <div class="p-8 rounded-3xl bg-fresh border border-teal-100/50 hover:shadow-xl hover:shadow-brand/5 transition-all group">
+                    <div class="w-12 h-12 bg-white rounded-2xl flex items-center justify-center mb-6 shadow-sm">🌙</div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-3">After-Hours</h3>
+                    <p class="text-sm text-slate-500 leading-relaxed">Seamless cleaning while your business sleeps.</p>
+                </div>
+            </div>
+        </div>
     </section>
+
+    <section id="testimonials" class="py-32 bg-slate-50">
+        <div class="max-w-5xl mx-auto px-6">
+            <h2 class="text-center text-[10px] font-black text-slate-400 mb-16 uppercase tracking-[0.4em]">Proven Reliability</h2>
+            <div class="space-y-6">
+                <div class="p-10 bg-white border border-slate-100 rounded-[2rem] card-shadow flex flex-col md:flex-row gap-8 items-center">
+                    <div class="w-20 h-20 rounded-full bg-slate-900 text-white flex items-center justify-center font-black text-2xl flex-shrink-0">JH</div>
+                    <div>
+                        <p class="text-lg text-slate-600 italic mb-4 leading-relaxed">“As the medical director at Cypress Creek ER, I’ve witnessed the outstanding service provided. They are meticulous, friendly, and beloved by our staff.”</p>
+                        <p class="font-bold text-slate-900 uppercase text-xs tracking-widest">— Dr. Jon Hemmert, Cypress Creek ER</p>
+                    </div>
+                </div>
+                <div class="p-10 bg-white border border-slate-100 rounded-[2rem] card-shadow flex flex-col md:flex-row gap-8 items-center">
+                    <div class="w-20 h-20 rounded-full bg-slate-900 text-white flex items-center justify-center font-black text-2xl flex-shrink-0">MK</div>
+                    <div>
+                        <p class="text-lg text-slate-600 italic mb-4 leading-relaxed">“Kassandra’s Cleaning Service has been cleaning my office for two years. They do an excellent job and have very competitive rates.”</p>
+                        <p class="font-bold text-slate-900 uppercase text-xs tracking-widest">— Dr. Michael D. Kelly, Doctors For Women PLLC</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<section id="blog" class="py-32 bg-white">
+  <div class="max-w-7xl mx-auto px-6">
     
-    <section class="section" id="services">
-      <h2>Our Services</h2>
-      <div class="services">
-        <div class="service">
-          <h3>General Office Cleaning</h3>
-          <p>Dusting, vacuuming, trash removal, and sanitization of workspaces and common areas.</p>
+    <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+      <div>
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand/10 border border-brand/20 text-brand text-[10px] font-black uppercase tracking-widest mb-6">
+          Insights • Houston, TX
         </div>
-        <div class="service">
-          <h3>Restroom Sanitization</h3>
-          <p>Full disinfecting and restocking services with high hygiene standards.</p>
-        </div>
-        <div class="service">
-          <h3>Floor Care</h3>
-          <p>Carpet cleaning, floor polishing, and deep scrubbing for lasting impressions.</p>
-        </div>
-        <div class="service">
-          <h3>After-Hours Cleaning</h3>
-          <p>Discreet and efficient cleaning after business hours, including weekends.</p>
-        </div>
+        <h2 class="text-4xl font-black text-slate-900 mb-4">From the Blog</h2>
+        <p class="text-slate-500 max-w-xl">
+          Practical cleaning guidance for medical clinics, law offices, and small businesses — written for Houston decision-makers.
+        </p>
       </div>
-    </section>
 
+      <a href="#contact" class="text-brand font-bold text-sm border-b-2 border-brand/20 pb-1 hover:border-brand transition">
+        Want a custom cleaning plan? →
+      </a>
+    </div>
 
-    <section class="section" id="testimonials">
-      <h2>Testimonials</h2>
-    
-      <div class="testimonial" style="display: flex; align-items: center; gap: 24px; margin-bottom: 40px; max-width: 900px; margin-left: auto; margin-right: auto;">
-        <div style="
-          flex-shrink: 0;
-          height: 100px;
-          width: 100px;
-          border-radius: 50%;
-          background-color: #f0f0f0;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          font-size: 32px;
-          font-weight: bold;
-          color: #333;
-          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-        ">JH</div>
-        <div>
-          <p style="margin: 0 0 8px 0; font-style: italic;">
-            “As the medical director at Cypress Creek ER, I’ve witnessed the outstanding service provided by Armando and Florybeth. They are meticulous, friendly, and beloved by our staff. I give them my highest recommendation.”
-          </p>
-          <p style="font-weight: bold; margin: 0;">— Dr. Jon Hemmert, Cypress Creek ER</p>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      
+      <!-- Card 1 -->
+      <a href="top-7-office-cleaning-north-houston.html"
+         class="group p-8 rounded-3xl bg-fresh border border-teal-100/50 card-shadow hover:shadow-xl hover:shadow-brand/5 transition-all">
+        <div class="flex items-start justify-between gap-4">
+          <div class="w-12 h-12 bg-white rounded-2xl flex items-center justify-center shadow-sm">🧽</div>
+          <div class="text-slate-300 group-hover:text-brand transition text-xl leading-none">↗</div>
         </div>
-      </div>
-    
-      <div class="testimonial" style="display: flex; align-items: center; gap: 24px; max-width: 900px; margin-left: auto; margin-right: auto;">
-        <div style="
-          flex-shrink: 0;
-          height: 100px;
-          width: 100px;
-          border-radius: 50%;
-          background-color: #f0f0f0;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          font-size: 32px;
-          font-weight: bold;
-          color: #333;
-          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-        ">MK</div>
-        <div>
-          <p style="margin: 0 0 8px 0; font-style: italic;">
-            “Kassandra’s Cleaning Service has been cleaning my office for two years. They do an excellent job, are always punctual, and have very competitive rates. I’ve always been completely satisfied.”
-          </p>
-          <p style="font-weight: bold; margin: 0;">— Dr. Michael D. Kelly, Doctors For Women PLLC</p>
+        <h3 class="text-lg font-black text-slate-900 mt-6 leading-snug">
+          Top 7 Office Cleaning Services in North Houston
+        </h3>
+        <p class="text-sm text-slate-500 mt-3 leading-relaxed">
+          And why local businesses trust Kassandra’s — quality, consistency, and discreet after-hours service.
+        </p>
+        <div class="mt-6 text-[10px] font-black uppercase tracking-[0.2em] text-slate-400 group-hover:text-brand transition">
+          Read article →
         </div>
-      </div>
-    </section>
-    
+      </a>
 
-    <section class="section" id="industries">
-      <h2>Industries Served</h2>
-      <ul>
-        <li>Law Offices</li>
-        <li>Real Estate Agencies</li>
-        <li>Medical Clinics</li>
-        <li>Startups & Coworking Spaces</li>
-        <li>Accounting Firms</li>
-      </ul>
-    </section>
-
-    <!-- <section class="section" id="checklist">
-      <h2>Cleaning Checklist</h2>
-      <div class="placeholder-img"></div>
-      <p><a href="#">Download our full office cleaning checklist (PDF)</a></p>
-    </section> -->
-    <section class="section" id="checklist">
-      <h2>Cleaning Checklist</h2>
-      <img
-        src="/img/cleaning-checklist.png"
-        alt="Cleaning Checklist"
-        style="
-          height: 180px;
-          width: auto;
-          max-width: 1000px;
-          background: #fff;
-          border-radius: 12px;
-          box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
-          border: 1px solid #f0f0f0;
-          display: block;
-          margin: 24px auto 0;
-        "
-      />
-      <p style="text-align: center; margin-top: 16px;">
-        <a href="assets/cleaning-checklist.pdf" download style="text-decoration: underline; color: #007BFF;">
-          Download our full office cleaning checklist (PDF)
-        </a>
-      </p>
-    </section>
-
-
-    <section class="section" id="gallery">
-      <h2>Meet The Team</h2>
-      <div class="carousel">
-        <button class="carousel-btn prev" onclick="moveSlide(-1)">&#10094;</button>
-        <div class="carousel-track">
-          <img src="img/carousel/1.JPG" alt="Before and After 1" class="carousel-image">
-          <img src="img/carousel/2.JPG" alt="Before and After 2" class="carousel-image">
-          <img src="img/carousel/3.JPG" alt="Before and After 3" class="carousel-image">
-          <img src="img/carousel/4.JPG" alt="Before and After 4" class="carousel-image">
-          <img src="img/carousel/5.JPG" alt="Before and After 5" class="carousel-image">
-          <img src="img/carousel/6.JPG" alt="Before and After 6" class="carousel-image">
-          <img src="img/carousel/7.JPG" alt="Before and After 7" class="carousel-image">
-          <img src="img/carousel/8.JPG" alt="Before and After 8" class="carousel-image">
-          <img src="img/carousel/9.JPG" alt="Before and After 9" class="carousel-image">
-          <img src="img/carousel/10.JPG" alt="Before and After 10" class="carousel-image">
-
-          <!-- Add more images here -->
+      <!-- Card 2 -->
+      <a href="houston-office-restroom-disinfection.html"
+         class="group p-8 rounded-3xl bg-white border border-slate-100 card-shadow hover:shadow-xl hover:shadow-brand/5 transition-all">
+        <div class="flex items-start justify-between gap-4">
+          <div class="w-12 h-12 bg-fresh rounded-2xl flex items-center justify-center shadow-sm">🚽</div>
+          <div class="text-slate-300 group-hover:text-brand transition text-xl leading-none">↗</div>
         </div>
-        <button class="carousel-btn next" onclick="moveSlide(1)">&#10095;</button>
-      </div>
-    </section>
+        <h3 class="text-lg font-black text-slate-900 mt-6 leading-snug">
+          How Often Should Houston Offices Disinfect Their Bathrooms?
+        </h3>
+        <p class="text-sm text-slate-500 mt-3 leading-relaxed">
+          A simple schedule by traffic level — and the spots most vendors miss.
+        </p>
+        <div class="mt-6 text-[10px] font-black uppercase tracking-[0.2em] text-slate-400 group-hover:text-brand transition">
+          Read article →
+        </div>
+      </a>
 
-<section class="section" id="blog">
-  <h2>From the Blog</h2>
-  <ul>
-    <li>
-      <a href="top-7-office-cleaning-north-houston.html">
-        🧽 Top 7 Office Cleaning Services in North Houston (And Why Local Businesses Trust Kassandra’s)
+      <!-- Card 3 -->
+      <a href="houston-overlooked-office-cleaning-tasks.html"
+         class="group p-8 rounded-3xl bg-white border border-slate-100 card-shadow hover:shadow-xl hover:shadow-brand/5 transition-all">
+        <div class="flex items-start justify-between gap-4">
+          <div class="w-12 h-12 bg-fresh rounded-2xl flex items-center justify-center shadow-sm">🧼</div>
+          <div class="text-slate-300 group-hover:text-brand transition text-xl leading-none">↗</div>
+        </div>
+        <h3 class="text-lg font-black text-slate-900 mt-6 leading-snug">
+          Houston’s 5 Most Overlooked Office Cleaning Tasks
+        </h3>
+        <p class="text-sm text-slate-500 mt-3 leading-relaxed">
+          The germs you can’t see — and why “looks clean” isn’t the same as “is clean.”
+        </p>
+        <div class="mt-6 text-[10px] font-black uppercase tracking-[0.2em] text-slate-400 group-hover:text-brand transition">
+          Read article →
+        </div>
       </a>
-    </li>
-    <li>
-      <a href="houston-office-restroom-disinfection.html">
-        🚽 How Often Should Houston Offices Disinfect Their Bathrooms?
+
+      <!-- Card 4 -->
+      <a href="houston-boutique-cleaning-services.html"
+         class="group p-8 rounded-3xl bg-fresh border border-teal-100/50 card-shadow hover:shadow-xl hover:shadow-brand/5 transition-all">
+        <div class="flex items-start justify-between gap-4">
+          <div class="w-12 h-12 bg-white rounded-2xl flex items-center justify-center shadow-sm">⚖️</div>
+          <div class="text-slate-300 group-hover:text-brand transition text-xl leading-none">↗</div>
+        </div>
+        <h3 class="text-lg font-black text-slate-900 mt-6 leading-snug">
+          Why Law Offices & Medical Clinics Prefer Boutique Cleaning
+        </h3>
+        <p class="text-sm text-slate-500 mt-3 leading-relaxed">
+          Privacy, consistency, and accountability — without the “big vendor” chaos.
+        </p>
+        <div class="mt-6 text-[10px] font-black uppercase tracking-[0.2em] text-slate-400 group-hover:text-brand transition">
+          Read article →
+        </div>
       </a>
-    </li>
-    <li>
-      <a href="houston-overlooked-office-cleaning-tasks.html">
-        🧼 Houston’s 5 Most Overlooked Office Cleaning Tasks — And the Germs You Can’t See
+
+      <!-- Card 5 -->
+      <a href="houston-eco-friendly-cleaning-cost.html"
+         class="group p-8 rounded-3xl bg-white border border-slate-100 card-shadow hover:shadow-xl hover:shadow-brand/5 transition-all">
+        <div class="flex items-start justify-between gap-4">
+          <div class="w-12 h-12 bg-fresh rounded-2xl flex items-center justify-center shadow-sm">🌿</div>
+          <div class="text-slate-300 group-hover:text-brand transition text-xl leading-none">↗</div>
+        </div>
+        <h3 class="text-lg font-black text-slate-900 mt-6 leading-snug">
+          Is Eco-Friendly Office Cleaning Worth It?
+        </h3>
+        <p class="text-sm text-slate-500 mt-3 leading-relaxed">
+          A cost breakdown for Houston businesses — when it saves money, and when it doesn’t.
+        </p>
+        <div class="mt-6 text-[10px] font-black uppercase tracking-[0.2em] text-slate-400 group-hover:text-brand transition">
+          Read article →
+        </div>
       </a>
-    </li>
-    <li>
-      <a href="houston-boutique-cleaning-services.html">
-        ⚖️ Why Small Law Offices and Medical Clinics in Houston Prefer Boutique Cleaning Services
+
+      <!-- Card 6 -->
+      <a href="office-cleaning-cost-houston-2026.html"
+         class="group p-8 rounded-3xl bg-white border border-slate-100 card-shadow hover:shadow-xl hover:shadow-brand/5 transition-all">
+        <div class="flex items-start justify-between gap-4">
+          <div class="w-12 h-12 bg-fresh rounded-2xl flex items-center justify-center shadow-sm">💰</div>
+          <div class="text-slate-300 group-hover:text-brand transition text-xl leading-none">↗</div>
+        </div>
+        <h3 class="text-lg font-black text-slate-900 mt-6 leading-snug">
+          Office Cleaning Cost in Houston (2026 Pricing Guide)
+        </h3>
+        <p class="text-sm text-slate-500 mt-3 leading-relaxed">
+          Per sq. ft. and hourly pricing — plus what actually changes your quote.
+        </p>
+        <div class="mt-6 text-[10px] font-black uppercase tracking-[0.2em] text-slate-400 group-hover:text-brand transition">
+          Read article →
+        </div>
       </a>
-    </li>
-    <li>
-      <a href="houston-eco-friendly-cleaning-cost.html">
-        🌿 Is Eco-Friendly Office Cleaning Worth It? A Cost Breakdown for Houston Businesses
-      </a>
-    </li>
-    <li>
-      <a href="office-cleaning-cost-houston-2026.html">
-        💰 Office Cleaning Cost in Houston: 2026 Pricing Guide (Per Sq. Ft. & Hourly)
-      </a>
-    </li>
-  </ul>
+
+    </div>
+
+    <!-- CTA strip -->
+    <div class="mt-16 p-10 rounded-[2.5rem] bg-slate-50 border border-slate-100 flex flex-col md:flex-row md:items-center justify-between gap-6">
+      <div>
+        <div class="text-[10px] font-black uppercase tracking-[0.3em] text-slate-400 mb-3">Need help now?</div>
+        <div class="text-2xl font-black text-slate-900">Get a quote in one email.</div>
+        <p class="text-slate-500 mt-2">Tell us your office type + square footage + preferred schedule.</p>
+      </div>
+      <!-- <button onclick="window.location.href='mailto:kassandras@kassandra-tx.com'"
+        class="w-full md:w-auto bg-slate-900 text-white px-10 py-5 rounded-2xl font-black text-lg hover:bg-brand transition-all shadow-xl shadow-slate-200">
+        Schedule a Free Quote
+      </button> -->
+
+      <div class="relative z-20 flex flex-wrap gap-4 mt-10">
+                  <button onclick="window.location.href='mailto:kassandras@kassandra-tx.com'"
+                    class="w-full sm:w-auto bg-transparent border-2 border-slate-900 text-slate-900 px-10 py-5 rounded-2xl font-black text-lg hover:bg-slate-900 hover:text-[#0D9488] transition-all duration-300 shadow-xl shadow-slate-100 transform active:scale-95 text-center">
+                    Schedule a Free Quote
+                  </button>
+                </div>
+    </div>
+
+  </div>
 </section>
 
 
-    <section class="section" id="faq">
-      <h2>Frequently Asked Questions</h2>
-      <div class="faq">
-        <strong>Do you bring your own supplies?</strong>
-        <p>Yes, we bring all necessary eco-friendly and commercial-grade supplies.</p>
-      </div>
-      <div class="faq">
-        <strong>Are your products pet-safe?</strong>
-        <p>Absolutely. We use non-toxic and pet-safe solutions for all areas.</p>
-      </div>
+    <section id="contact" class="py-40 text-center">
+        <div class="max-w-3xl mx-auto px-6">
+            <h2 class="text-5xl font-black text-slate-900 mb-8">Ready for a spotless office?</h2>
+            <p class="text-slate-500 mb-12 text-lg">One email to start your custom cleaning strategy.</p>
+            
+            <div class="p-1 rounded-[3rem] bg-gradient-to-b from-slate-100 to-white inline-block w-full">
+                <div class="bg-white p-12 rounded-[2.8rem] border border-slate-50 card-shadow">
+                    <div class="text-brand font-black text-3xl mb-2">(832) 623-0527</div>
+                    <div class="text-slate-400 text-sm mb-10 font-medium tracking-wide">kassandras@kassandra-tx.com</div>
+                    <button onclick="window.location.href='mailto:kassandras@kassandra-tx.com'" class="w-full bg-brand text-white py-6 rounded-2xl font-black text-xl hover:bg-slate-900 transition-all shadow-xl shadow-brand/20">
+                        Request Quote Now
+                    </button>
+                </div>
+            </div>
+            <p class="mt-12 text-[10px] uppercase font-black tracking-widest text-slate-300">Serving Houston, TX • Est. 2025</p>
+        </div>
     </section>
 
-    <!-- <section class="section" id="contact">
-      <h2>Contact Us</h2>
-      <p>Email: <a href="mailto:kassandra@cleaningservice.com">kassandra@cleaningservice.com</a></p>
-      <p>Phone: (832) 623-0527</p>
-      <div class="placeholder-img" style="height: 300px;"></div>
-    </section> -->
+    <footer class="py-12 border-t border-slate-100 bg-white text-center">
+        <p class="text-slate-400 text-[10px] font-bold uppercase tracking-widest">© 2026 Kassandra Cleaning Service LLC • All Rights Reserved</p>
+    </footer>
 
-    <section class="section" id="contact">
-      <h2>Contact Us</h2>
-      <p>Email: <a href="mailto:kassandras@kassandra-tx.com">kassandras@kassandra-tx.com</a></p>
-      <p>Phone: (832) 623-0527</p>
-      <img
-      src="/img/contact-us.png"
-      alt="Contact Us"
-      style="
-        height: 300px;
-        width: auto;
-        background: #fff;
-        border-radius: 12px;
-        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
-        border: 1px solid #f0f0f0;
-        display: block;
-        margin: 24px auto 0;
-      "
-    />
-    </section>
-
-    <section class="cta">
-      <h2>Ready to Schedule a Free Quote?</h2>
-      <button onclick="window.location.href='mailto:kassandras@kassandra-tx.com'">Contact Us Now</button>
-    </section>
-
-  </div>
-
-  <footer>
-    © 2025 Kassandra Cleaning Service · Houston, TX · All rights reserved.
-  </footer>
-
-  <script>
-    let currentIndex = 0;
-    const track = document.querySelector('.carousel-track');
-    const images = document.querySelectorAll('.carousel-image');
-  
-    function moveSlide(direction) {
-      const total = images.length;
-      currentIndex = (currentIndex + direction + total) % total;
-      const offset = -currentIndex * 100;
-      track.style.transform = `translateX(${offset}%)`;
-    }
-  
-    // Auto-slide every 1 second
-    setInterval(() => {
-      moveSlide(1);
-    }, 3000);
-  </script>
-
-  
 </body>
 </html>
