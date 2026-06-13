@@ -1,362 +1,429 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Instant Quote – Kassandra Cleaning Service (Office)</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
-  <meta name="description" content="Instant office-cleaning quote for Houston SMBs. Enter square feet, bathrooms, and visits per week to get a downloadable PDF with taxes and cost breakdown."/>
-  <style>
-    /* —— Base (match your minimal aesthetic) —— */
-    :root {
-      --primary: #00695c; /* site primary */
-      --accent: #f9a825; /* warm accent */
-      --ink: #1a1a1a;
-      --muted: #666;
-      --bg: #fafafa;
-      --card: #fff;
-      --radius: 12px;
-      --shadow: 0 8px 24px rgba(0,0,0,.06);
-    }
-    * { box-sizing: border-box; }
-    body { font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, sans-serif; margin:0; background:var(--bg); color:var(--ink); line-height:1.65; }
-    .container { max-width: 980px; margin: 0 auto; padding: 28px 16px 60px; }
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Instant Quote – Kassandras Cleaning Service</title>
+    <meta name="description" content="Instant office-cleaning quote for Houston SMBs. Enter square feet, bathrooms, and visits per week to get a downloadable PDF with taxes and cost breakdown."/>
 
-    /* —— Header —— */
-    header { background: var(--primary); color: #fff; border-bottom: 1px solid rgba(255,255,255,.18); }
-    .header-inner { max-width: 980px; margin: 0 auto; padding: 22px 16px; display:flex; align-items:center; gap:14px; }
-    .logo { height: 42px; width:auto; display:block; }
-    .title-wrap h1 { font-size: 1.4rem; margin:0 0 3px; font-weight:700; }
-    .title-wrap p { margin:0; opacity:.9; }
+    <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-TJXBQL5P');
+    </script>
 
-    /* —— Card —— */
-    .card { background: var(--card); border: 1px solid #eee; border-radius: var(--radius); box-shadow: var(--shadow); padding: 18px; margin-top: 18px; }
-    h2 { font-size: 1.25rem; margin: 0 0 10px; color:#222; }
-    p { margin:0 0 12px; }
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4BYY4CFTVV"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-    /* —— Form —— */
-    .row { display:grid; grid-template-columns:1fr; gap:12px; }
-    @media (min-width: 760px) { .row.two{ grid-template-columns: 1fr 1fr; } .row.three{ grid-template-columns: 1fr 1fr 1fr; } }
-    label { font-weight: 700; font-size: 14px; display:block; }
-    input[type="text"], input[type="number"], input[type="email"], input[type="tel"], input[type="url"], select { width:100%; margin-top:6px; padding:12px; border:1px solid #ccc; border-radius:8px; background:#fff; font-size:15px; }
-    .help { font-size:12px; color:#666; margin-top:6px; }
+      gtag('config', 'G-4BYY4CFTVV');
+    </script>
 
-    .pill { display:inline-block; background:#eef6ff; color:#1d3a5f; border:1px solid #d7e9ff; border-radius: 999px; padding:6px 12px; font-weight:700; font-size:13px; margin-right:8px; }
+    <link rel="preconnect" href="https://fonts.bunny.net">
+    <link href="https://fonts.bunny.net/css?family=figtree:300,400,600,700,900&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
 
-    /* —— Preview grid —— */
-    .kpis { display:grid; grid-template-columns:1fr; gap:10px; }
-    @media (min-width:720px){ .kpis{ grid-template-columns: repeat(3, 1fr);} }
-    .kpi { background:#f7f7f7; border:1px solid #eee; border-radius:10px; padding:12px; text-align:center; }
-    .kpi b { font-size:1.1rem; display:block; }
-    .muted { color:#666; }
-
-    /* —— Buttons —— */
-    .actions { margin-top: 14px; display:flex; gap:10px; flex-wrap:wrap; }
-    .btn { appearance:none; border:1px solid #1a1a1a; background:#1a1a1a; color:#fff; padding:12px 16px; border-radius:8px; font-weight:600; cursor:pointer; }
-    .btn:hover{ background:#333; }
-    .btn.secondary{ background:#fff; color:#1a1a1a; }
-
-    /* —— Footer note —— */
-    .note { background: #f1fbf5; border-left:3px solid #0a7f2e; border-radius:8px; padding:12px 14px; font-size:14px; margin-top:12px; }
-    .foot { text-align:center; color:#777; font-size:13px; margin-top:26px; }
-
-    /* —— PDF brand header —— */
-    .brandline { background:#fff9e8; border:1px solid #ffe2a8; padding:10px 12px; border-radius:10px; margin-bottom: 10px; }
-    .badge { display:inline-block; background: var(--accent); color:#111; font-weight:700; padding:2px 10px; border-radius:999px; }
-
-    @media (max-width:720px){
-      .header-inner{ flex-direction: column; align-items: stretch; text-align:left; }
-      .logo{ width:100%; height:auto; max-height:160px; object-fit:contain; margin-top:8px; }
-      header .title-wrap h1{ font-size:1.35rem; line-height:1.2; }
-      header .title-wrap p{ font-size:.95rem; }
-    }
-    @media (max-width:600px){
-      header .title-wrap h1{ font-size:1.1rem; }
-    }
-    
-  </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Figtree', 'sans-serif'] },
+                    colors: {
+                        brand: '#0D9488', 
+                        fresh: '#F0FDFA', 
+                        surface: '#FFFFFF',
+                        slate: '#475569'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(12px); }
+        .hero-bg { background: radial-gradient(circle at top right, #ccfbf1, #ffffff); }
+        .card-shadow { box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.05); }
+    </style>
 </head>
-<body>
-  <header>
-    <div class="header-inner">
-      <img src="/img/collage.png" alt="Kassandra Cleaning Service" class="logo" width="1000" height="180" loading="lazy" decoding="async" sizes="(max-width: 720px) 100vw, 420px" />
-      <div class="title-wrap">
-        <h1>Kassandra Cleaning Service — Instant Office Quote</h1>
-        <p>Simple. Transparent. A downloadable PDF with Texas taxes included.</p>
-      </div>
-    </div>
-  </header>
 
-  <main class="container">
+<body class="font-sans antialiased text-slate-600 bg-slate-50 selection:bg-brand selection:text-white">
 
-    <section class="card brandline" aria-live="polite">
-      <span class="badge">Houston • Texas</span>
-      <p style="margin:6px 0 0;">Enter your details. We’ll estimate time, labor, materials and margin — then apply the current Houston sales tax (default 8.25%).</p>
-    </section>
-
-    <section class="card" id="quote-form">
-      <h2>Get Your Quote</h2>
-      <div class="row two">
-        <div>
-          <label for="business">Business / Practice Name</label>
-          <input id="business" type="text" placeholder="e.g., Cypress Creek ER" required />
+    <nav class="fixed top-0 w-full z-50 border-b border-slate-100 glass">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <div class="w-8 h-8 bg-brand rounded-lg flex items-center justify-center text-white font-bold shadow-lg shadow-brand/20">K</div>
+                <span class="text-xl font-black tracking-tighter text-slate-900 uppercase">Kassandras<span class="text-brand">Cleaning</span></span>
+            </div>
+            <div class="hidden lg:flex items-center gap-8 text-[10px] font-bold tracking-widest uppercase">
+                <a href="/" class="text-slate-500 hover:text-brand transition">Home</a>
+                <a href="mailto:kassandras@kassandra-tx.com" class="bg-brand text-white px-6 py-2.5 rounded-full hover:bg-teal-700 transition-all shadow-md shadow-brand/10">
+                    Contact Us
+                </a>
+            </div>
         </div>
-        <div>
-          <label for="contact">Contact Email (optional)</label>
-          <input id="contact" type="email" placeholder="you@company.com" />
+    </nav>
+
+    <header class="relative pt-32 pb-16 hero-bg border-b border-slate-200/50">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand/10 border border-brand/20 text-brand text-[10px] font-bold uppercase tracking-widest mb-6">
+                Medical & Specialty Grade • Houston, TX
+            </div>
+            <h1 class="text-4xl lg:text-6xl font-black text-slate-900 leading-[1.1] tracking-tighter mb-4">
+                Transparent <span class="text-brand underline decoration-brand/20 underline-offset-8">Office Quotes</span>.
+            </h1>
+            <p class="text-lg text-slate-500 max-w-2xl mx-auto leading-relaxed">
+                Simple and upfront pricing. Enter your facility details below to generate a comprehensive estimate and downloadable PDF, Texas sales tax included.
+            </p>
         </div>
-      </div>
+    </header>
 
-      <div class="row three" style="margin-top:8px;">
-        <div>
-          <label for="sqft">Office Area (sq ft)</label>
-          <input id="sqft" type="number" inputmode="decimal" placeholder="e.g., 2000" min="200" step="10" required />
-          <div class="help">Includes all cleanable areas. Minimum 200 sq ft.</div>
-        </div>
-        <div>
-          <label for="baths">Bathrooms</label>
-          <input id="baths" type="number" placeholder="e.g., 2" min="1" step="1" required />
-        </div>
-        <div>
-          <label for="days">Days / Week</label>
-          <select id="days" required>
-            <option value="">Select…</option>
-            <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option>
-          </select>
-        </div>
-      </div>
+    <main class="max-w-4xl mx-auto px-6 py-16">
+        
+        <section class="bg-white border border-slate-100 p-8 md:p-12 rounded-[2.5rem] card-shadow mb-12" id="quote-form">
+            <h2 class="text-2xl font-black text-slate-900 mb-8 border-b border-slate-50 pb-4">Facility Details</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                <div>
+                    <label for="business" class="block text-sm font-bold text-slate-900 mb-2">Business / Practice Name</label>
+                    <input id="business" type="text" placeholder="e.g., Cypress Creek ER" required 
+                           class="w-full px-5 py-4 rounded-2xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-brand focus:outline-none transition-all" />
+                </div>
+                <div>
+                    <label for="contact" class="block text-sm font-bold text-slate-900 mb-2">Contact Email (optional)</label>
+                    <input id="contact" type="email" placeholder="you@company.com" 
+                           class="w-full px-5 py-4 rounded-2xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-brand focus:outline-none transition-all" />
+                </div>
+            </div>
 
-      <div class="row two" style="margin-top:8px;">
-        <div>
-          <label for="tax">Texas Sales Tax (%)</label>
-          <input id="tax" type="number" step="0.01" value="8.25" />
-          <div class="help">Default for Houston. Adjust if your location is different.</div>
-        </div>
-        <div>
-          <label for="freq">Frequency Discount</label>
-          <input id="freq" type="text" value="Auto" disabled />
-          <div class="help">Applies automatically based on days/week.</div>
-        </div>
-      </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+                <div>
+                    <label for="sqft" class="block text-sm font-bold text-slate-900 mb-2">Office Area (sq ft)</label>
+                    <input id="sqft" type="number" inputmode="decimal" placeholder="e.g., 2000" min="200" step="10" required 
+                           class="w-full px-5 py-4 rounded-2xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-brand focus:outline-none transition-all" />
+                    <div class="text-xs text-slate-400 mt-2">Minimum 200 sq ft.</div>
+                </div>
+                <div>
+                    <label for="baths" class="block text-sm font-bold text-slate-900 mb-2">Bathrooms</label>
+                    <input id="baths" type="number" placeholder="e.g., 2" min="1" step="1" required 
+                           class="w-full px-5 py-4 rounded-2xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-brand focus:outline-none transition-all" />
+                </div>
+                <div>
+                    <label for="days" class="block text-sm font-bold text-slate-900 mb-2">Days / Week</label>
+                    <select id="days" required class="w-full px-5 py-4 rounded-2xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-brand focus:outline-none transition-all appearance-none cursor-pointer">
+                        <option value="">Select…</option>
+                        <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option>
+                    </select>
+                </div>
+            </div>
 
-      <div style=\"margin:10px 0 6px;\">
-        <span class=\"pill\">Base wage: $15/hr</span>
-        <span class=\"pill\">Payroll burden est.: +20%</span>
-        <span class=\"pill\">Materials: $0.006/sq ft/visit</span>
-        <span class=\"pill\">Target margin: 35%</span>
-      </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                <div>
+                    <label for="tax" class="block text-sm font-bold text-slate-900 mb-2">Texas Sales Tax (%)</label>
+                    <input id="tax" type="number" step="0.01" value="8.25" 
+                           class="w-full px-5 py-4 rounded-2xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-brand focus:outline-none transition-all" />
+                    <div class="text-xs text-slate-400 mt-2">Houston default. Adjust if necessary.</div>
+                </div>
+                <div>
+                    <label for="freq" class="block text-sm font-bold text-slate-900 mb-2">Frequency Discount</label>
+                    <input id="freq" type="text" value="Auto" disabled 
+                           class="w-full px-5 py-4 rounded-2xl border border-slate-100 bg-slate-100 text-slate-400 cursor-not-allowed" />
+                    <div class="text-xs text-slate-400 mt-2">Applies automatically based on days/week.</div>
+                </div>
+            </div>
 
-      <div class="actions">
-        <button class="btn" id="calcBtn">Calculate Quote</button>
-        <button class="btn secondary" id="pdfBtn" disabled>Download PDF</button>
-      </div>
+            <div class="flex flex-wrap gap-3 mb-10 border-t border-slate-50 pt-6">
+                <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 text-slate-500 text-[11px] font-bold uppercase tracking-widest">Fully Insured & Bonded</span>
+                <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 text-slate-500 text-[11px] font-bold uppercase tracking-widest">Hospital-Grade Products</span>
+                <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 text-slate-500 text-[11px] font-bold uppercase tracking-widest">OSHA Sanitization Standards</span>
+            </div>
 
-      <div class="note" id="noteAfterCalc" style="display:none;">
-        Estimates assume standard office cleaning (no specialty restoration). Final onsite assessment may adjust time/cost.
-      </div>
-    </section>
+            <div class="flex flex-wrap gap-4">
+                <button id="calcBtn" class="w-full sm:w-auto bg-brand text-white px-10 py-5 rounded-2xl font-black text-lg hover:bg-teal-700 transition-all shadow-xl shadow-brand/20">
+                    Calculate Quote
+                </button>
+                <button id="pdfBtn" disabled class="w-full sm:w-auto bg-transparent border-2 border-slate-900 text-slate-900 px-10 py-5 rounded-2xl font-black text-lg hover:bg-slate-900 hover:text-[#0D9488] transition-all duration-300 shadow-xl shadow-slate-100 disabled:opacity-50 disabled:cursor-not-allowed">
+                    Download PDF
+                </button>
+            </div>
 
-    <section class="card" id="preview" style="display:none;">
-      <h2>Quote Preview</h2>
-      <p class="muted" id="who"></p>
+            <div id="noteAfterCalc" style="display:none;" class="mt-8 p-6 rounded-2xl bg-fresh border border-teal-100/50 flex items-start gap-4">
+                <div class="w-8 h-8 rounded-xl bg-white flex-shrink-0 flex items-center justify-center text-brand shadow-sm">ℹ️</div>
+                <p class="text-sm text-slate-600 leading-relaxed mt-1">Estimates assume specialized medical/office routine cleaning. Deep microbial remediation or restoration priced separately upon walkthrough.</p>
+            </div>
+        </section>
 
-      <div class="kpis" style="margin:10px 0 14px;">
-        <div class=\"kpi\"><span class=\"muted\">Time / visit</span><b id=\"kpitime\">—</b></div>
-        <div class="kpi"><span class="muted">Before tax (monthly)</span><b id="kpisub">—</b></div>
-        <div class="kpi"><span class="muted">Total (with tax)</span><b id="kpitotal">—</b></div>
-      </div>
+        <section id="preview" style="display:none;" class="bg-white border border-slate-100 p-8 md:p-12 rounded-[2.5rem] card-shadow mb-8">
+            <h2 class="text-2xl font-black text-slate-900 mb-2">Quote Preview</h2>
+            <p class="text-slate-400 text-sm font-medium tracking-wide mb-8" id="who"></p>
 
-      <div id="breakdown"></div>
-    </section>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                <div class="p-8 rounded-3xl bg-slate-50 border border-slate-100">
+                    <span class="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400 block mb-2">Before tax (monthly)</span>
+                    <b id="kpisub" class="text-3xl font-black text-slate-900">—</b>
+                </div>
+                <div class="p-8 rounded-3xl bg-fresh border border-teal-100/50 shadow-sm shadow-brand/5">
+                    <span class="text-[10px] font-black uppercase tracking-[0.2em] text-brand block mb-2">Total (with tax)</span>
+                    <b id="kpitotal" class="text-3xl font-black text-brand">—</b>
+                </div>
+            </div>
 
-    <p class="foot">© 2025 Kassandra Cleaning Service · Houston, TX · All rights reserved.</p>
-  </main>
+            <div id="breakdown"></div>
+        </section>
 
-  <!-- jsPDF (UMD) -->
-  <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
-  <script>
-    // —— Pricing model (transparent & tweakable) ——
-    const MODEL = {
-      wageBase: 15,           // $/hr
-      payrollBurden: 0.20,    // 20%
-      materialsPerSqFt: 0.006,// $ per sq ft per visit
-      marginTarget: 0.35,     // 35%
-      timePerSqFtMin: 0.06,   // minutes per sq ft (standard)
-      minutesPerBathroom: 15, // add per bathroom
-      setupMinutes: 15,       // per visit
-      weeksPerMonth: 4.33,
-      freqDiscount(days){     // frequency-based discount
-        if(days >= 6) return 0.15;
-        if(days >= 4) return 0.10;
-        if(days >= 2) return 0.05;
-        return 0.00;
-      }
-    };
+        <section id="next-steps" style="display:none;" class="p-8 md:p-12 rounded-[2.5rem] bg-white card-shadow border border-slate-100">
+            <h2 class="text-2xl font-black text-slate-900 mb-2">Next Step: Facility Walkthrough</h2>
+            <p class="text-slate-500 mb-8 leading-relaxed">This estimate is a solid baseline. To lock in your price and establish a custom cleaning protocol, we need to assess your space in person.</p>
+            
+            <form action="https://formspree.io/f/xlgkovyd" method="POST" class="space-y-6">
+                <input type="hidden" name="Business_Name" id="form_biz" />
+                <input type="hidden" name="Quoted_SqFt" id="form_sqft" />
+                <input type="hidden" name="Quoted_Baths" id="form_baths" />
+                <input type="hidden" name="Quoted_Days_Per_Week" id="form_days" />
+                <input type="hidden" name="Quoted_Monthly_Total" id="form_total" />
 
-    const $ = (id) => document.getElementById(id);
-    const money = (n) => n.toLocaleString(undefined, { style:'currency', currency:'USD' });
-    const pct = (n) => (n*100).toFixed(2) + '%';
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-sm font-bold text-slate-900 mb-2">Your Name</label>
+                        <input type="text" name="name" required class="w-full px-5 py-4 rounded-2xl border border-slate-200 bg-slate-50 text-slate-900 focus:bg-white focus:ring-2 focus:ring-brand focus:outline-none transition-all" placeholder="John Doe" />
+                    </div>
+                    <div>
+                        <label class="block text-sm font-bold text-slate-900 mb-2">Contact Email</label>
+                        <input type="email" name="email" id="form_email" required class="w-full px-5 py-4 rounded-2xl border border-slate-200 bg-slate-50 text-slate-900 focus:bg-white focus:ring-2 focus:ring-brand focus:outline-none transition-all" placeholder="you@company.com" />
+                    </div>
+                </div>
 
-    function computeQuote({ sqft, baths, days, taxRate }) {
-      const minutesArea = sqft * MODEL.timePerSqFtMin;
-      const minutesBath = baths * MODEL.minutesPerBathroom;
-      const minutesTotal = minutesArea + minutesBath + MODEL.setupMinutes;
-      const hours = minutesTotal / 60;
+                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100">
+                    <label class="block text-sm font-bold text-slate-900 mb-4">Would you like to proceed with scheduling a proper estimate?</label>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <label class="flex items-center gap-3 cursor-pointer">
+                            <input type="radio" name="Schedule_Visit" value="Yes, contact me to schedule" required class="w-5 h-5 text-brand bg-white border-slate-300 focus:ring-brand" />
+                            <span class="text-slate-700 font-medium">Yes, let's schedule a visit</span>
+                        </label>
+                        <label class="flex items-center gap-3 cursor-pointer">
+                            <input type="radio" name="Schedule_Visit" value="Not yet, just keeping the quote" class="w-5 h-5 text-brand bg-white border-slate-300 focus:ring-brand" />
+                            <span class="text-slate-700 font-medium">Not right now</span>
+                        </label>
+                    </div>
+                </div>
 
-      // Effective labor rate with burden (no block rounding)
-      const laborRate = MODEL.wageBase * (1 + MODEL.payrollBurden);
-      const laborCostPerVisit = hours * laborRate;
-      const materialsPerVisit = sqft * MODEL.materialsPerSqFt;
+                <div>
+                    <label class="block text-sm font-bold text-slate-900 mb-2">Facility questions or specific concerns? (Optional)</label>
+                    <textarea name="message" rows="3" class="w-full px-5 py-4 rounded-2xl border border-slate-200 bg-slate-50 text-slate-900 focus:bg-white focus:ring-2 focus:ring-brand focus:outline-none transition-all placeholder-slate-400" placeholder="e.g., We have sensitive equipment in exam room 3..."></textarea>
+                </div>
 
-      // Subtotal cost per visit before margin (no overhead/transportation)
-      const costPerVisit = laborCostPerVisit + materialsPerVisit;
-      const pricePerVisit = costPerVisit / (1 - MODEL.marginTarget);
+                <button type="submit" class="w-full bg-brand text-white px-10 py-5 rounded-2xl font-black text-lg hover:bg-teal-700 transition-all shadow-xl shadow-brand/20">
+                    Send Details
+                </button>
+            </form>
+        </section>
 
-      const discount = MODEL.freqDiscount(days);
-      const pricePerVisitAfterDisc = pricePerVisit * (1 - discount);
+    </main>
 
-      const visitsPerMonth = days * MODEL.weeksPerMonth;
-      const monthlyBeforeTax = pricePerVisitAfterDisc * visitsPerMonth;
-      const salesTax = monthlyBeforeTax * (taxRate/100);
-      const monthlyTotal = monthlyBeforeTax + salesTax;
+    <footer class="py-12 border-t border-slate-200 bg-white text-center mt-20">
+        <p class="text-slate-400 text-[10px] font-bold uppercase tracking-widest">© 2026 Kassandra Cleaning Service LLC • All Rights Reserved</p>
+    </footer>
 
-      return {
-        minutesTotal, hours, laborRate, laborCostPerVisit, materialsPerVisit,
-        costPerVisit, pricePerVisit, discount, pricePerVisitAfterDisc,
-        visitsPerMonth, monthlyBeforeTax, salesTax, monthlyTotal
-      };
-    }
+    <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
+    <script>
+        // Houston Medical/Specialty Niche values (Lower End Spectrum)
+        const MODEL = {
+            wageBase: 18,           
+            payrollBurden: 0.20,    
+            materialsPerSqFt: 0.008,
+            marginTarget: 0.55,     
+            timePerSqFtMin: 0.06,   
+            minutesPerBathroom: 15, 
+            setupMinutes: 15,       
+            weeksPerMonth: 4.33,
+            freqDiscount(days){     
+                if(days >= 6) return 0.15;
+                if(days >= 4) return 0.10;
+                if(days >= 2) return 0.05;
+                return 0.00;
+            }
+        };
 
-    function renderBreakdown(biz, sqft, baths, days, taxRate, r){
-      const lines = [];
-      lines.push(`<div class="pill">${sqft.toLocaleString()} sq ft</div>`);
-      lines.push(`<div class="pill">${baths} bathroom(s)</div>`);
-      lines.push(`<div class="pill">${days} day(s)/week</div>`);
-      lines.push(`<div class="pill">Tax: ${taxRate}%</div>`);
+        const $ = (id) => document.getElementById(id);
+        const money = (n) => n.toLocaleString(undefined, { style:'currency', currency:'USD' });
+        const pct = (n) => (n*100).toFixed(2) + '%';
 
-      const html = `
-        <div style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:10px;">${lines.join('')}</div>
-        <div style="overflow-x:auto;">
-          <table style="width:100%; border-collapse:collapse;">
-            <thead>
-              <tr style="background:#f7f7f7;">
-                <th style="text-align:left; padding:10px; border-bottom:1px solid #eee;">Item</th>
-                <th style="text-align:right; padding:10px; border-bottom:1px solid #eee;">Per Visit</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr><td style=\"padding:8px 10px;\">Estimated time</td><td style=\"padding:8px 10px; text-align:right;\">${r.hours.toFixed(2)} hrs</td></tr>
-                            <tr><td style=\"padding:8px 10px;\">Labor @ ${money(r.laborRate)}/hr</td><td style="padding:8px 10px; text-align:right;">${money(r.laborCostPerVisit)}</td></tr>
-              <tr><td style="padding:8px 10px;">Materials (${money(MODEL.materialsPerSqFt)}/sq ft)</td><td style="padding:8px 10px; text-align:right;">${money(r.materialsPerVisit)}</td></tr>
-                                          <tr><td style="padding:8px 10px; font-weight:700;">Cost (before margin)</td><td style="padding:8px 10px; text-align:right; font-weight:700;">${money(r.costPerVisit)}</td></tr>
-              <tr><td style="padding:8px 10px;">Target margin</td><td style="padding:8px 10px; text-align:right;">${pct(MODEL.marginTarget)}</td></tr>
-              <tr><td style="padding:8px 10px; font-weight:700;">Price / visit</td><td style="padding:8px 10px; text-align:right; font-weight:700;">${money(r.pricePerVisit)}</td></tr>
-              <tr><td style="padding:8px 10px;">Frequency discount</td><td style="padding:8px 10px; text-align:right;">-${pct(r.discount)}</td></tr>
-              <tr><td style="padding:8px 10px; font-weight:700;">Your price / visit</td><td style="padding:8px 10px; text-align:right; font-weight:700;">${money(r.pricePerVisitAfterDisc)}</td></tr>
-            </tbody>
-          </table>
-        </div>
-        <div style="margin-top:12px; display:grid; grid-template-columns:1fr; gap:8px;">
-          <div style="display:flex; justify-content:space-between; border-top:1px dashed #ddd; padding-top:10px;"><span>Visits / month</span><b>${r.visitsPerMonth.toFixed(2)}</b></div>
-          <div style="display:flex; justify-content:space-between;"><span>Monthly (before tax)</span><b>${money(r.monthlyBeforeTax)}</b></div>
-          <div style="display:flex; justify-content:space-between;"><span>Sales tax (${taxRate}%)</span><b>${money(r.salesTax)}</b></div>
-          <div style="display:flex; justify-content:space-between; font-size:1.15rem; border-top:1px solid #eee; padding-top:10px;"><span>Total / month</span><b>${money(r.monthlyTotal)}</b></div>
-        </div>
-      `;
-      return html;
-    }
+        function computeQuote({ sqft, baths, days, taxRate }) {
+            const minutesArea = sqft * MODEL.timePerSqFtMin;
+            const minutesBath = baths * MODEL.minutesPerBathroom;
+            const minutesTotal = minutesArea + minutesBath + MODEL.setupMinutes;
+            const hours = minutesTotal / 60;
 
-    function generatePDF(data, result){
-      const { jsPDF } = window.jspdf;
-      const doc = new jsPDF({ unit: 'pt', format: 'letter' });
-      const L = (s) => doc.text(String(s), 56, y, { baseline:'top' });
-      const R = (s) => doc.text(String(s), 556, y, { align:'right', baseline:'top' });
-      let y = 56;
+            const laborRate = MODEL.wageBase * (1 + MODEL.payrollBurden);
+            const laborCostPerVisit = hours * laborRate;
+            const materialsPerVisit = sqft * MODEL.materialsPerSqFt;
 
-      // Brand bar
-      doc.setFillColor(255, 249, 232);
-      doc.setDrawColor(255, 226, 168);
-      doc.roundedRect(40, 40, 536, 70, 8, 8, 'FD');
-      doc.setTextColor(17,17,17);
-      doc.setFont('helvetica', 'bold'); doc.setFontSize(14);
-      doc.text('Kassandra Cleaning Service — Office Quote', 56, 56);
-      doc.setFont('helvetica', 'normal'); doc.setFontSize(11);
-      doc.text('Houston, Texas 770—  ·  kassandras@kassandra-tx.com  ·  (832) 623-0527', 56, 76);
+            const costPerVisit = laborCostPerVisit + materialsPerVisit;
+            const pricePerVisit = costPerVisit / (1 - MODEL.marginTarget);
 
-      // Client & inputs
-      y = 128; doc.setTextColor(0,0,0); doc.setFont('helvetica','bold'); doc.setFontSize(13);
-      L('Prepared for:'); doc.setFont('helvetica','normal'); doc.setFontSize(12);
-      y+=18; L(`${data.business || 'Client'} — ${data.sqft.toLocaleString()} sq ft, ${data.baths} bath(s), ${data.days}/week`);
-      y+=10; L(`Tax: ${data.taxRate}% · Frequency discount: ${pct(result.discount)}`);
+            const discount = MODEL.freqDiscount(days);
+            const pricePerVisitAfterDisc = pricePerVisit * (1 - discount);
 
-      // KPIs line
-      y+=22; doc.setFont('helvetica','bold'); L('Summary (Monthly)');
-      y+=18; doc.setFont('helvetica','normal');
-      L(`Before tax: ${money(result.monthlyBeforeTax)}`); R(`With tax: ${money(result.monthlyTotal)}`);
-      y+=10; R(`Estimated: ${result.hours.toFixed(2)} hrs`);
+            const visitsPerMonth = days * MODEL.weeksPerMonth;
+            const monthlyBeforeTax = pricePerVisitAfterDisc * visitsPerMonth;
+            const salesTax = monthlyBeforeTax * (taxRate/100);
+            const monthlyTotal = monthlyBeforeTax + salesTax;
 
-      // Table header
-      y+=26; doc.setFont('helvetica','bold'); L('Breakdown per Visit');
-      y+=16; doc.setDrawColor(230); doc.line(56, y, 556, y); y+=8; doc.setFont('helvetica','normal');
+            return {
+                minutesTotal, hours, laborRate, laborCostPerVisit, materialsPerVisit,
+                costPerVisit, pricePerVisit, discount, pricePerVisitAfterDisc,
+                visitsPerMonth, monthlyBeforeTax, salesTax, monthlyTotal
+            };
+        }
 
-      const rows = [
-        ['Estimated time', `${result.hours.toFixed(2)} hrs`],
-        [`Labor @ ${money(result.laborRate)}/hr`, money(result.laborCostPerVisit)],
-        [`Materials (${money(MODEL.materialsPerSqFt)}/sq ft)`, money(result.materialsPerVisit)],
-        ['Cost (before margin)', money(result.costPerVisit)],
-        ['Target margin', pct(MODEL.marginTarget)],
-        ['Price / visit', money(result.pricePerVisit)],
-        ['Frequency discount', '-' + pct(result.discount)],
-        ['Your price / visit', money(result.pricePerVisitAfterDisc)],
-      ];
+        function renderBreakdown(biz, sqft, baths, days, taxRate, r){
+            const html = `
+                <div class="overflow-hidden border border-slate-100 rounded-[2rem] mb-8">
+                    <table class="w-full text-left border-collapse">
+                        <thead>
+                            <tr class="bg-slate-50 border-b border-slate-100">
+                                <th class="py-5 px-6 font-bold text-slate-900 text-sm">Service Specifications</th>
+                                <th class="py-5 px-6 font-bold text-slate-900 text-sm text-right">Per Visit</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-sm text-slate-600 bg-white">
+                            <tr class="border-b border-slate-50 hover:bg-slate-50/50 transition">
+                                <td class="py-4 px-6">Estimated service time</td>
+                                <td class="py-4 px-6 text-right font-medium">${r.hours.toFixed(2)} hrs</td>
+                            </tr>
+                            <tr class="border-b border-slate-50 hover:bg-slate-50/50 transition">
+                                <td class="py-4 px-6 font-bold text-slate-900">Medical-grade base service rate</td>
+                                <td class="py-4 px-6 text-right font-medium">${money(r.pricePerVisit)}</td>
+                            </tr>
+                            <tr class="border-b border-slate-50 hover:bg-slate-50/50 transition">
+                                <td class="py-4 px-6 text-brand">Frequency discount plan</td>
+                                <td class="py-4 px-6 text-right font-medium text-brand">-${pct(r.discount)}</td>
+                            </tr>
+                            <tr class="bg-fresh border-t border-teal-100/50">
+                                <td class="py-5 px-6 font-black text-brand text-lg">Your rate / visit</td>
+                                <td class="py-5 px-6 text-right font-black text-brand text-lg">${money(r.pricePerVisitAfterDisc)}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
 
-      rows.forEach(([left, right])=>{ y+=18; L(left); R(right); });
+                <div class="space-y-4 px-2">
+                    <div class="flex justify-between items-center pb-4 border-b border-slate-100 text-sm">
+                        <span class="text-slate-500">Visits scheduled / month</span>
+                        <b class="text-slate-900">${r.visitsPerMonth.toFixed(2)}</b>
+                    </div>
+                    <div class="flex justify-between items-center pb-4 border-b border-slate-100 text-sm">
+                        <span class="text-slate-500">Monthly base investment</span>
+                        <b class="text-slate-900">${money(r.monthlyBeforeTax)}</b>
+                    </div>
+                    <div class="flex justify-between items-center pb-4 border-b border-slate-100 text-sm">
+                        <span class="text-slate-500">Texas sales tax (${taxRate}%)</span>
+                        <b class="text-slate-900">${money(r.salesTax)}</b>
+                    </div>
+                    <div class="flex justify-between items-center pt-2">
+                        <span class="font-bold text-slate-900">Total monthly investment</span>
+                        <b class="text-xl font-black text-brand">${money(r.monthlyTotal)}</b>
+                    </div>
+                </div>
+            `;
+            return html;
+        }
 
-      // Footer totals
-      y+=26; doc.setDrawColor(230); doc.line(56, y, 556, y);
-      y+=12; L(`Visits / month: ${result.visitsPerMonth.toFixed(2)}`); R(`Sales tax (${data.taxRate}%): ${money(result.salesTax)}`);
-      y+=18; doc.setFont('helvetica','bold'); L('Total / month'); R(money(result.monthlyTotal));
+        function generatePDF(data, result){
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF({ unit: 'pt', format: 'letter' });
+            const L = (s) => doc.text(String(s), 56, y, { baseline:'top' });
+            const R = (s) => doc.text(String(s), 556, y, { align:'right', baseline:'top' });
+            let y = 56;
 
-      // Terms
-      y+=28; doc.setFont('helvetica','normal'); doc.setFontSize(10);
-      const terms = 'Notes: Quote assumes standard office cleaning and typical soil levels. Materials are included per visit. Specialty services (carpet extraction, deep scrub/strip/wax, post-construction) are priced separately. Final pricing subject to walkthrough. Net 15. Liability insured. Sales tax collected per Texas jurisdiction.';
-      doc.text(doc.splitTextToSize(terms, 500), 56, y);
+            doc.setFillColor(240, 253, 250); 
+            doc.setDrawColor(204, 251, 241); 
+            doc.roundedRect(40, 40, 536, 70, 8, 8, 'FD');
+            doc.setTextColor(15, 23, 42); 
+            doc.setFont('helvetica', 'bold'); doc.setFontSize(14);
+            doc.text('Kassandra Cleaning Service — Medical/Specialty Quote', 56, 56);
+            doc.setFont('helvetica', 'normal'); doc.setFontSize(11);
+            doc.text('Houston, Texas 770—  ·  kassandras@kassandra-tx.com  ·  (832) 623-0527', 56, 76);
 
-      doc.save(`Kassandra_Quote_${(data.business||'Client').replace(/[^a-z0-9]+/gi,'_')}.pdf`);
-    }
+            y = 128; doc.setTextColor(0,0,0); doc.setFont('helvetica','bold'); doc.setFontSize(13);
+            L('Prepared for:'); doc.setFont('helvetica','normal'); doc.setFontSize(12);
+            y+=18; L(`${data.business || 'Client'} — ${data.sqft.toLocaleString()} sq ft, ${data.baths} bath(s), ${data.days}/week`);
+            y+=10; L(`Tax: ${data.taxRate}% · Frequency discount plan: ${pct(result.discount)}`);
 
-    $('calcBtn').addEventListener('click', () => {
-      const business = $('business').value.trim();
-      const sqft = parseFloat($('sqft').value);
-      const baths = parseInt($('baths').value || '0', 10);
-      const days = parseInt($('days').value || '0', 10);
-      const taxRate = parseFloat($('tax').value || '8.25');
+            y+=22; doc.setFont('helvetica','bold'); L('Summary (Monthly)');
+            y+=18; doc.setFont('helvetica','normal');
+            L(`Before tax: ${money(result.monthlyBeforeTax)}`); R(`With tax: ${money(result.monthlyTotal)}`);
+            y+=10; R(`Allocated service window: ${result.hours.toFixed(2)} hrs/visit`);
 
-      if(!sqft || !baths || !days){ alert('Please fill square feet, bathrooms, and days/week.'); return; }
+            y+=26; doc.setFont('helvetica','bold'); L('Breakdown per Visit');
+            y+=16; doc.setDrawColor(230); doc.line(56, y, 556, y); y+=8; doc.setFont('helvetica','normal');
 
-      const result = computeQuote({ sqft, baths, days, taxRate });
+            const rows = [
+                ['Estimated service time per visit', `${result.hours.toFixed(2)} hrs`],
+                ['Medical-grade base service rate', money(result.pricePerVisit)],
+                ['Frequency discount plan', '-' + pct(result.discount)],
+                ['Your rate / visit', money(result.pricePerVisitAfterDisc)],
+            ];
 
-      // Update UI
-      $('freq').value = (result.discount>0) ? `${(result.discount*100).toFixed(0)}% auto` : '—';
-      $('who').textContent = `${business || 'Client'} · ${sqft.toLocaleString()} sq ft · ${baths} bath(s) · ${days}/week · Tax ${taxRate}%`;
-      //$('kpitime').textContent = `${result.hours.toFixed(2)} hrs`;
-      $('kpisub').textContent = money(result.monthlyBeforeTax);
-      $('kpitotal').textContent = money(result.monthlyTotal);
-      $('breakdown').innerHTML = renderBreakdown(business, sqft, baths, days, taxRate, result);
+            rows.forEach(([left, right])=>{ y+=18; L(left); R(right); });
 
-      $('preview').style.display = 'block';
-      $('noteAfterCalc').style.display = 'block';
-      $('pdfBtn').disabled = false;
+            y+=26; doc.setDrawColor(230); doc.line(56, y, 556, y);
+            y+=12; L(`Visits scheduled / month: ${result.visitsPerMonth.toFixed(2)}`); R(`Texas sales tax (${data.taxRate}%): ${money(result.salesTax)}`);
+            y+=18; doc.setFont('helvetica','bold'); L('Total monthly investment'); R(money(result.monthlyTotal));
 
-      // cache for PDF
-      window.__quoteData = { business, sqft, baths, days, taxRate };
-      window.__quoteResult = result;
-    });
+            y+=28; doc.setFont('helvetica','normal'); doc.setFontSize(10); doc.setTextColor(100, 100, 100);
+            const terms = 'Notes: Quote assumes compliant specialized medical/office routine cleaning procedures and standard surface limits. Specialized deep sanitation or emergency restoration priced separately. Final rates subject to an onsite facility walkthrough. Net 15 terms. General liability insured. Sales tax collected per Texas tax jurisdiction.';
+            doc.text(doc.splitTextToSize(terms, 500), 56, y);
 
-    $('pdfBtn').addEventListener('click', () => {
-      if(!window.__quoteData || !window.__quoteResult) { alert('Please calculate the quote first.'); return; }
-      generatePDF(window.__quoteData, window.__quoteResult);
-    });
-  </script>
+            doc.save(`Kassandra_Medical_Quote_${(data.business||'Client').replace(/[^a-z0-9]+/gi,'_')}.pdf`);
+        }
+
+        $('calcBtn').addEventListener('click', () => {
+            const business = $('business').value.trim();
+            const contactEmail = $('contact').value.trim();
+            const sqft = parseFloat($('sqft').value);
+            const baths = parseInt($('baths').value || '0', 10);
+            const days = parseInt($('days').value || '0', 10);
+            const taxRate = parseFloat($('tax').value || '8.25');
+
+            if(!sqft || !baths || !days){ alert('Please fill square feet, bathrooms, and days/week.'); return; }
+
+            const result = computeQuote({ sqft, baths, days, taxRate });
+
+            $('freq').value = (result.discount>0) ? `${(result.discount*100).toFixed(0)}% auto` : '—';
+            $('who').textContent = `${business || 'Client'} • ${sqft.toLocaleString()} sq ft • ${baths} bath(s) • ${days}/week • Tax ${taxRate}%`;
+            $('kpisub').textContent = money(result.monthlyBeforeTax);
+            $('kpitotal').textContent = money(result.monthlyTotal);
+            $('breakdown').innerHTML = renderBreakdown(business, sqft, baths, days, taxRate, result);
+
+            // Populate Formspree Hidden Fields
+            $('form_biz').value = business || 'Not provided';
+            $('form_sqft').value = sqft;
+            $('form_baths').value = baths;
+            $('form_days').value = days;
+            $('form_total').value = money(result.monthlyTotal);
+            if(contactEmail) $('form_email').value = contactEmail;
+
+            // Show sections
+            $('preview').style.display = 'block';
+            $('noteAfterCalc').style.display = 'flex';
+            $('next-steps').style.display = 'block';
+            
+            const pdfBtn = $('pdfBtn');
+            pdfBtn.disabled = false;
+            
+            $('preview').scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+            window.__quoteData = { business, sqft, baths, days, taxRate };
+            window.__quoteResult = result;
+        });
+
+        $('pdfBtn').addEventListener('click', () => {
+            if(!window.__quoteData || !window.__quoteResult) { alert('Please calculate the quote first.'); return; }
+            generatePDF(window.__quoteData, window.__quoteResult);
+        });
+    </script>
 </body>
 </html>
