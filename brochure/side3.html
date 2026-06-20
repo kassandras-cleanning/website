@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel 3 - The Solution</title>
+    <style>
+        body, html { 
+            margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden; 
+            font-family: 'Helvetica Neue', Arial, sans-serif; 
+            background: #e2e8f0; 
+            display: flex; justify-content: center; align-items: center; 
+            transition: opacity 0.5s ease; 
+        }
+        
+        /* Tri-fold proportion */
+        .panel { 
+            height: 85vh; 
+            aspect-ratio: 3.66 / 8.5; 
+            background-color: #0f172a; 
+            box-shadow: 0 20px 50px rgba(0,0,0,0.2); 
+            padding: 2.5rem 1.5rem; 
+            box-sizing: border-box; 
+            display: flex; flex-direction: column; justify-content: center; 
+        }
+
+        h1 { 
+            color: #ffffff; font-size: 2.2rem; font-weight: 800; 
+            line-height: 1.1; margin: 0 0 10px 0; letter-spacing: -0.02em;
+        }
+
+        .subhead { 
+            color: #94a3b8; font-size: 1rem; margin-bottom: 30px; line-height: 1.4;
+        }
+
+        .pillar { 
+            display: flex; gap: 15px; margin-bottom: 25px; align-items: flex-start; 
+        }
+
+        .icon { 
+            width: 35px; height: 35px; 
+            background: rgba(13,148,136,0.1); border: 1px solid rgba(13,148,136,0.3); 
+            border-radius: 8px; display: flex; justify-content: center; align-items: center; 
+            color: #0D9488; font-size: 16px; font-weight: bold; flex-shrink: 0; margin-top: 2px;
+        }
+
+        h3 { 
+            color: #ffffff; font-size: 1rem; font-weight: 700; margin: 0 0 5px 0; 
+        }
+
+        p { 
+            color: #94a3b8; font-size: 0.85rem; line-height: 1.4; margin: 0; 
+        }
+
+        /* Navigation Buttons floating outside the panel */
+        .nav-btn { 
+            position: absolute; bottom: 5vh; 
+            background: #ffffff; border: none; color: #0f172a; 
+            font-size: 14px; font-weight: 800; letter-spacing: 0.1em; 
+            text-transform: uppercase; cursor: pointer; transition: all 0.3s; 
+            padding: 12px 24px; border-radius: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .nav-btn.prev { left: 5vw; }
+        .nav-btn.next { right: 5vw; }
+
+        .nav-btn:hover { 
+            background: #0f172a;
+            color: #ffffff;
+        }
+
+        .fade-out { opacity: 0; transform: translateX(-20px); }
+    </style>
+</head>
+<body>
+    
+    <div class="panel">
+        <h1>Hospital-Grade.<br><span style="color:#0D9488;">Locally Owned.</span></h1>
+        <p class="subhead">We bring strict ER standards directly to your office.</p>
+        
+        <div class="pillar">
+            <div class="icon">✓</div>
+            <div>
+                <h3>Hospital-Grade Disinfection</h3>
+                <p>We utilize EPA-approved, 100% non-toxic products to safely eliminate pathogens without harsh chemical odors.</p>
+            </div>
+        </div>
+        
+        <div class="pillar">
+            <div class="icon">🔒</div>
+            <div>
+                <h3>Discreet & Secure Logistics</h3>
+                <p>Trusted by law firms. Our after-hours servicing is designed for absolute privacy and compliance.</p>
+            </div>
+        </div>
+    </div>
+
+    <button class="nav-btn prev" onclick="nav('side2.html')">← Back</button>
+    <button class="nav-btn next" onclick="nav('side4.html')">Next →</button>
+
+    <script>
+        function nav(url) { 
+            document.body.classList.add('fade-out'); 
+            setTimeout(() => window.location.href = url, 400); 
+        }
+        document.addEventListener('keydown', e => { 
+            if (e.key === 'ArrowRight') nav('side4.html'); 
+            else if (e.key === 'ArrowLeft') nav('side2.html'); 
+        });
+    </script>
+</body>
+</html>

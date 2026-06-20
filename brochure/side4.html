@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel 4 - Capabilities</title>
+    <style>
+        body, html { 
+            margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden; 
+            font-family: 'Helvetica Neue', Arial, sans-serif; 
+            background: #e2e8f0; 
+            display: flex; justify-content: center; align-items: center; 
+            transition: opacity 0.5s ease; 
+        }
+        
+        /* Tri-fold proportion */
+        .panel { 
+            height: 85vh; 
+            aspect-ratio: 3.66 / 8.5; 
+            background-color: #F0FDFA; 
+            box-shadow: 0 20px 50px rgba(0,0,0,0.1); 
+            padding: 2.5rem 1.5rem; 
+            box-sizing: border-box; 
+            display: flex; flex-direction: column; justify-content: center; 
+        }
+
+        h1 { 
+            color: #0f172a; font-size: 2rem; font-weight: 800; 
+            line-height: 1.1; margin: 0 0 10px 0; letter-spacing: -0.02em;
+        }
+
+        p.desc { 
+            color: #475569; font-size: 0.9rem; margin-bottom: 25px; 
+            line-height: 1.4;
+        }
+
+        /* Changed to a 1-column grid for the narrow tri-fold layout */
+        .grid { 
+            display: grid; grid-template-columns: 1fr; gap: 12px; 
+        }
+
+        .card { 
+            background: #ffffff; padding: 15px; border-radius: 10px; 
+            border: 1px solid rgba(13,148,136,0.2); 
+            box-shadow: 0 4px 10px rgba(0,0,0,0.02); 
+        }
+
+        .card h3 { 
+            color: #0f172a; margin: 0 0 5px 0; font-size: 1rem; 
+        }
+
+        .card p { 
+            color: #475569; font-size: 0.8rem; margin: 0; line-height: 1.4; 
+        }
+
+        /* Navigation Buttons floating outside the panel */
+        .nav-btn { 
+            position: absolute; bottom: 5vh; 
+            background: #ffffff; border: none; color: #0f172a; 
+            font-size: 14px; font-weight: 800; letter-spacing: 0.1em; 
+            text-transform: uppercase; cursor: pointer; transition: all 0.3s; 
+            padding: 12px 24px; border-radius: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .nav-btn.prev { left: 5vw; }
+        .nav-btn.next { right: 5vw; }
+
+        .nav-btn:hover { 
+            background: #0f172a;
+            color: #ffffff;
+        }
+
+        .fade-out { opacity: 0; transform: translateX(-20px); }
+    </style>
+</head>
+<body>
+    
+    <div class="panel">
+        <h1>Service<br>Capabilities</h1>
+        <p class="desc">Every space requires a unique approach based on your footprint and traffic.</p>
+        
+        <div class="grid">
+            <div class="card">
+                <h3>🏢 General Office</h3>
+                <p>Full dusting, vacuuming, and complete workspace sanitization.</p>
+            </div>
+            <div class="card">
+                <h3>🧼 Restrooms</h3>
+                <p>Deep disinfecting protocols and automated supply restocking.</p>
+            </div>
+            <div class="card">
+                <h3>✨ Floor Care</h3>
+                <p>Carpet extraction and high-gloss hard floor polishing.</p>
+            </div>
+            <div class="card">
+                <h3>🌙 After-Hours</h3>
+                <p>Seamless cleaning operations while your business sleeps.</p>
+            </div>
+        </div>
+    </div>
+
+    <button class="nav-btn prev" onclick="nav('side3.html')">← Back</button>
+    <button class="nav-btn next" onclick="nav('side5.html')">Next →</button>
+
+    <script>
+        function nav(url) { 
+            document.body.classList.add('fade-out'); 
+            setTimeout(() => window.location.href = url, 400); 
+        }
+        document.addEventListener('keydown', e => { 
+            if (e.key === 'ArrowRight') nav('side5.html'); 
+            else if (e.key === 'ArrowLeft') nav('side3.html'); 
+        });
+    </script>
+</body>
+</html>

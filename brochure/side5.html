@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel 5 - Testimonials</title>
+    <style>
+        body, html { 
+            margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden; 
+            font-family: 'Helvetica Neue', Arial, sans-serif; 
+            background: #e2e8f0; 
+            display: flex; justify-content: center; align-items: center; 
+            transition: opacity 0.5s ease; 
+        }
+        
+        /* Tri-fold proportion */
+        .panel { 
+            height: 85vh; 
+            aspect-ratio: 3.66 / 8.5; 
+            background-color: #0D9488; 
+            box-shadow: 0 20px 50px rgba(0,0,0,0.2); 
+            padding: 2.5rem 1.5rem; 
+            box-sizing: border-box; 
+            display: flex; flex-direction: column; justify-content: center; 
+        }
+
+        h1 { 
+            color: #ffffff; font-size: 2rem; font-weight: 800; 
+            line-height: 1.1; margin: 0 0 25px 0; letter-spacing: -0.02em;
+        }
+
+        .quote { 
+            background: rgba(255,255,255,0.1); padding: 20px; 
+            border-radius: 12px; border: 1px solid rgba(255,255,255,0.2); 
+            margin-bottom: 20px; 
+        }
+
+        .quote p { 
+            color: white; font-size: 0.95rem; font-style: italic; 
+            line-height: 1.5; margin: 0 0 15px 0; 
+        }
+
+        .quote h4 { 
+            color: #ccfbf1; margin: 0; font-size: 0.75rem; 
+            text-transform: uppercase; letter-spacing: 0.1em; line-height: 1.3;
+        }
+
+        /* Navigation Buttons floating outside the panel */
+        .nav-btn { 
+            position: absolute; bottom: 5vh; 
+            background: #ffffff; border: none; color: #0f172a; 
+            font-size: 14px; font-weight: 800; letter-spacing: 0.1em; 
+            text-transform: uppercase; cursor: pointer; transition: all 0.3s; 
+            padding: 12px 24px; border-radius: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .nav-btn.prev { left: 5vw; }
+        .nav-btn.next { right: 5vw; }
+
+        .nav-btn:hover { 
+            background: #0f172a;
+            color: #ffffff;
+        }
+
+        .fade-out { opacity: 0; transform: translateX(-20px); }
+    </style>
+</head>
+<body>
+    
+    <div class="panel">
+        <h1>Proven<br>Reliability</h1>
+        
+        <div class="quote">
+            <p>“As the medical director at Cypress Creek ER, I’ve witnessed the outstanding service provided. They are meticulous, friendly, and beloved by our staff.”</p>
+            <h4>— Dr. Jon Hemmert,<br>Cypress Creek ER</h4>
+        </div>
+        
+        <div class="quote">
+            <p>“Kassandra’s Cleaning Service has been cleaning my office for two years. They do an excellent job and have very competitive rates.”</p>
+            <h4>— Dr. Michael D. Kelly,<br>Doctors For Women PLLC</h4>
+        </div>
+    </div>
+
+    <button class="nav-btn prev" onclick="nav('side4.html')">← Back</button>
+    <button class="nav-btn next" onclick="nav('side6.html')">Next →</button>
+
+    <script>
+        function nav(url) { 
+            document.body.classList.add('fade-out'); 
+            setTimeout(() => window.location.href = url, 400); 
+        }
+        document.addEventListener('keydown', e => { 
+            if (e.key === 'ArrowRight') nav('side6.html'); 
+            else if (e.key === 'ArrowLeft') nav('side4.html'); 
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel 6 - Back Cover</title>
+    <style>
+        body, html { 
+            margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden; 
+            font-family: 'Helvetica Neue', Arial, sans-serif; 
+            background: #e2e8f0; 
+            display: flex; justify-content: center; align-items: center; 
+            transition: opacity 0.5s ease; 
+        }
+        
+        /* Tri-fold proportion */
+        .panel { 
+            height: 85vh; 
+            aspect-ratio: 3.66 / 8.5; 
+            background-color: #ffffff; 
+            box-shadow: 0 20px 50px rgba(0,0,0,0.1); 
+            padding: 2.5rem 1.5rem; 
+            box-sizing: border-box; 
+            display: flex; flex-direction: column; justify-content: center; align-items: center; 
+            text-align: center; position: relative;
+        }
+
+        .top-label { 
+            color: #94a3b8; font-size: 0.75rem; font-weight: 800; 
+            letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 15px; 
+        }
+
+        h1 { 
+            color: #0f172a; font-size: 2rem; font-weight: 800; 
+            line-height: 1.1; margin: 0 0 15px 0; letter-spacing: -0.02em;
+        }
+
+        p { 
+            color: #475569; font-size: 0.95rem; margin-bottom: 40px; line-height: 1.4;
+        }
+
+        .cta-btn { 
+            background: #0D9488; color: white; padding: 15px 25px; 
+            border-radius: 50px; font-size: 1rem; font-weight: 800; 
+            text-decoration: none; box-shadow: 0 10px 30px rgba(13,148,136,0.3); 
+            transition: transform 0.2s, background 0.2s; 
+            white-space: nowrap;
+        }
+
+        .cta-btn:hover { 
+            transform: translateY(-3px); background: #0f172a; 
+        }
+
+        .footer { 
+            position: absolute; bottom: 30px; left: 0; width: 100%;
+            color: #94a3b8; font-size: 0.7rem; font-weight: 800; 
+            letter-spacing: 0.1em; text-transform: uppercase; line-height: 1.5;
+        }
+
+        /* Navigation Buttons floating outside the panel */
+        .nav-btn { 
+            position: absolute; bottom: 5vh; 
+            background: #ffffff; border: none; color: #0f172a; 
+            font-size: 14px; font-weight: 800; letter-spacing: 0.1em; 
+            text-transform: uppercase; cursor: pointer; transition: all 0.3s; 
+            padding: 12px 24px; border-radius: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .nav-btn.prev { left: 5vw; }
+
+        .nav-btn:hover { 
+            background: #0f172a;
+            color: #ffffff;
+        }
+
+        .fade-out { opacity: 0; transform: translateX(-20px); }
+    </style>
+</head>
+<body>
+    
+    <div class="panel">
+        <div class="top-label">Next Steps</div>
+        <h1>Ready for a<br>spotless office?</h1>
+        <p>Generate your custom cleaning strategy in minutes.</p>
+        <a href="instant-quoting.html" class="cta-btn">Request a Quote</a>
+        
+        <div class="footer">
+            (832) 623-0527<br>Serving Houston, TX
+        </div>
+    </div>
+
+    <button class="nav-btn prev" onclick="nav('side5.html')">← Back</button>
+
+    <script>
+        function nav(url) { 
+            document.body.classList.add('fade-out'); 
+            setTimeout(() => window.location.href = url, 400); 
+        }
+        document.addEventListener('keydown', e => { 
+            if (e.key === 'ArrowLeft') nav('side5.html'); 
+        });
+    </script>
+</body>
+</html>
